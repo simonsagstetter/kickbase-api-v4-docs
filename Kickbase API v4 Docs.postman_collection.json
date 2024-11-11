@@ -23,7 +23,12 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"em\": {{email}},\n    \"loy\": false,\n    \"pass\": {{password}},\n    \"rep\": {}\n}"
+							"raw": "{\n    \"em\": {{email}},\n    \"loy\": false,\n    \"pass\": {{password}},\n    \"rep\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "https://api.kickbase.com/v4/user/login",
@@ -40,7 +45,79 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"em\": {{email}},\n    \"loy\": false,\n    \"pass\": {{password}},\n    \"rep\": {}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.kickbase.com/v4/user/login",
+									"protocol": "https",
+									"host": [
+										"api",
+										"kickbase",
+										"com"
+									],
+									"path": [
+										"v4",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Mon, 11 Nov 2024 17:50:04 GMT"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store, no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "br"
+								},
+								{
+									"key": "set-cookie",
+									"value": "kkstrauth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrYi5uYW1lIjoiVGlsaWRpbiBaaWRhbmUiLCJrYi51aWQiOiIyNTk0NzU0Iiwia2IuciI6IjIiLCJrYi5hIjoiMiIsImtiLnAiOiIiLCJpYXQiOjE3MzEzNDc0MDQsIm5iZiI6MTczMTM0NzQwNCwiZXhwIjoxNzMxOTUyMjA0LCJpc3MiOiJodHRwOi8va2lja2Jhc2UuY29tIiwiYXVkIjoia2lja2Jhc2UifQ.K5zVJM5PhtI8mo1nrASbRFXO_ZPzCOvTKtuzpcxaP9A; expires=Mon, 18 Nov 2024 17:50:04 GMT; domain=.kickbase.com; path=/"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"u\": {\n        \"email\": \"\",\n        \"notifications\": \"\",\n        \"cover\": \"\",\n        \"flags\": \"\",\n        \"proExpiry\": \"\",\n        \"vemail\": \"\",\n        \"perms\": [],\n        \"id\": \"\",\n        \"name\": \"\",\n        \"profile\": \"\"\n    },\n    \"srvl\": [\n        {\n            \"id\": \"\",\n            \"cpi\": \"\",\n            \"name\": \"\",\n            \"creator\": \"\",\n            \"creatorId\": \"\",\n            \"creation\": \"\",\n            \"ai\": \"\",\n            \"t\": \"\",\n            \"au\": \"\",\n            \"mu\": \"\",\n            \"ap\": \"\",\n            \"pub\": \"\",\n            \"gm\": \"\",\n            \"mpl\": \"\",\n            \"pl\": \"\",\n            \"ci\": \"\",\n            \"amd\": \"\",\n            \"mpst\": \"\",\n            \"vr\": \"\",\n            \"adm\": \"\"\n        },\n        {\n            \"id\": \"\",\n            \"cpi\": \"\",\n            \"name\": \"\",\n            \"creator\": \"\",\n            \"creatorId\": \"\",\n            \"creation\": \"\",\n            \"ai\": \"\",\n            \"t\": \"\",\n            \"au\": \"\",\n            \"mu\": \"\",\n            \"ap\": \"\",\n            \"pub\": \"\",\n            \"gm\": \"\",\n            \"mpl\": \"\",\n            \"ci\": \"\",\n            \"amd\": \"\",\n            \"vr\": \"\",\n            \"adm\": \"\"\n        },\n        {\n            \"id\": \"\",\n            \"cpi\": \"\",\n            \"ch\": \"\",\n            \"name\": \"\",\n            \"creator\": \"\",\n            \"creatorId\": \"\",\n            \"creation\": \"\",\n            \"ai\": \"\",\n            \"au\": \"\",\n            \"mu\": \"\",\n            \"pub\": \"\",\n            \"gm\": \"\",\n            \"mpl\": \"\",\n            \"cht\": \"\",\n            \"adm\": \"\"\n        }\n    ],\n    \"tkn\": \"\",\n    \"tknex\": \"\",\n    \"chttkn\": \"\",\n    \"chtknex\": \"\",\n    \"isnu\": \"\"\n}"
+						}
+					]
 				},
 				{
 					"name": "User Settings",
@@ -49,7 +126,28 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									""
+									"let response = pm.response.json();",
+									"console.log(response);",
+									"// Function to recursively anonymize the response object",
+									"function anonymizeValues(obj) {",
+									"    for (let key in obj) {",
+									"        if (obj.hasOwnProperty(key)) {",
+									"            // If the value is an object, recursively call the function",
+									"            if (typeof obj[key] === 'object' && obj[key] !== null) {",
+									"                anonymizeValues(obj[key]);",
+									"            } else {",
+									"                // Replace non-object values with an empty string",
+									"                obj[key] = \"\";",
+									"            }",
+									"        }",
+									"    }",
+									"}",
+									"",
+									"// Anonymize the parsed response",
+									"anonymizeValues(response);",
+									"",
+									"// Convert the anonymized object back to a JSON string",
+									"const anonymizedResponseBody = JSON.stringify(response);"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -88,10 +186,78 @@
 								"user",
 								"settings"
 							]
-						},
-						"description": "``` json\n{\n  \"u\": { \n    \"i\": {id},\n    \"em\": {email},\n    \"unm\": {username}\n  }\n}\n\n ```"
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "User Settings",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.kickbase.com/v4/user/settings",
+									"protocol": "https",
+									"host": [
+										"api",
+										"kickbase",
+										"com"
+									],
+									"path": [
+										"v4",
+										"user",
+										"settings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Mon, 11 Nov 2024 17:59:26 GMT"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store, no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "br"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"u\": {\n        \"i\": \"\",\n        \"em\": \"\",\n        \"unm\": \"\"\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -618,7 +784,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/{{leagueId}}/users/{{userId}}/teamcenter",
+									"raw": "https://api.kickbase.com/v4/leagues/{{leagueId}}/users/{{userId}}/teamcenter?dayNumber={{dayNumber}}",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -632,6 +798,12 @@
 										"users",
 										"{{userId}}",
 										"teamcenter"
+									],
+									"query": [
+										{
+											"key": "dayNumber",
+											"value": "{{dayNumber}}"
+										}
 									]
 								}
 							},
@@ -1556,6 +1728,50 @@
 			]
 		},
 		{
+			"name": "Matches",
+			"item": [
+				{
+					"name": "Match Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.kickbase.com/v4/matches/{{matchId}}/details",
+							"protocol": "https",
+							"host": [
+								"api",
+								"kickbase",
+								"com"
+							],
+							"path": [
+								"v4",
+								"matches",
+								"{{matchId}}",
+								"details"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Competitions",
 			"item": [
 				{
@@ -1583,7 +1799,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/competitions/{{competitionId}}/players?position={{position}}&sorting={{sorting}}",
+									"raw": "https://api.kickbase.com/v4/competitions/{{competitionId}}/players?dayNumber={{dayNumber}}",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -1598,12 +1814,8 @@
 									],
 									"query": [
 										{
-											"key": "position",
-											"value": "{{position}}"
-										},
-										{
-											"key": "sorting",
-											"value": "{{sorting}}"
+											"key": "dayNumber",
+											"value": "{{dayNumber}}"
 										}
 									]
 								}
@@ -2947,7 +3159,76 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Live Event Types",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "https://api.kickbase.com/v4/live/eventtypes",
+									"protocol": "https",
+									"host": [
+										"api",
+										"kickbase",
+										"com"
+									],
+									"path": [
+										"v4",
+										"live",
+										"eventtypes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Mon, 11 Nov 2024 18:07:02 GMT"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store, no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "br"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"lcud\": \"2024-08-25T09:08:14Z\",\n    \"it\": [\n        {\n            \"i\": 45,\n            \"ti\": \"Cross\"\n        },\n        {\n            \"i\": 46,\n            \"ti\": \"Forward zone pass\"\n        },\n        {\n            \"i\": 47,\n            \"ti\": \"Accurate Keeper-Sweeper (GK)\"\n        },\n        {\n            \"i\": 48,\n            \"ti\": \"Accurate Throw (GK)\"\n        },\n        {\n            \"i\": 49,\n            \"ti\": \"Accurate long Ball\"\n        },\n        {\n            \"i\": 50,\n            \"ti\": \"Deadly Pass\"\n        },\n        {\n            \"i\": 52,\n            \"ti\": \"Aerial lost\"\n        },\n        {\n            \"i\": 79,\n            \"ti\": \"Aerial won\"\n        },\n        {\n            \"i\": 80,\n            \"ti\": \"Rebound Assist\"\n        },\n        {\n            \"i\": 81,\n            \"ti\": \"Rebound Assist\"\n        },\n        {\n            \"i\": 82,\n            \"ti\": \"Own Goal forced\"\n        },\n        {\n            \"i\": 83,\n            \"ti\": \"Deflected Assist\"\n        },\n        {\n            \"i\": 84,\n            \"ti\": \"Woodwork Assist\"\n        },\n        {\n            \"i\": 86,\n            \"ti\": \"Bonus: long range\"\n        },\n        {\n            \"i\": 87,\n            \"ti\": \"Penalty scored\"\n        },\n        {\n            \"i\": 88,\n            \"ti\": \"Penalty missed\"\n        },\n        {\n            \"i\": 89,\n            \"ti\": \"Penalty missed\"\n        },\n        {\n            \"i\": 90,\n            \"ti\": \"Penalty missed\"\n        },\n        {\n            \"i\": 91,\n            \"ti\": \"Post\"\n        },\n        {\n            \"i\": 92,\n            \"ti\": \"Left Post\"\n        },\n        {\n            \"i\": 93,\n            \"ti\": \"Right Post\"\n        },\n        {\n            \"i\": 94,\n            \"ti\": \"Back Pass Foul (GK)\"\n        },\n        {\n            \"i\": 96,\n            \"ti\": \"Big Chance Created\"\n        },\n        {\n            \"i\": 98,\n            \"ti\": \"Big Chance Created\"\n        },\n        {\n            \"i\": 99,\n            \"ti\": \"Big Chance Created\"\n        },\n        {\n            \"i\": 100,\n            \"ti\": \"Big Chance Created\"\n        },\n        {\n            \"i\": 101,\n            \"ti\": \"Big Chance Created\"\n        },\n        {\n            \"i\": 102,\n            \"ti\": \"Big Chance Created\"\n        },\n        {\n            \"i\": 103,\n            \"ti\": \"Big Chance missed\"\n        },\n        {\n            \"i\": 104,\n            \"ti\": \"Cross blocked\"\n        },\n        {\n            \"i\": 106,\n            \"ti\": \"Challenge lost\"\n        },\n        {\n            \"i\": 107,\n            \"ti\": \"Cleared on the Line\"\n        },\n        {\n            \"i\": 108,\n            \"ti\": \"Cross not claimed (GK)\"\n        },\n        {\n            \"i\": 109,\n            \"ti\": \"Dangerous play\"\n        },\n        {\n            \"i\": 110,\n            \"ti\": \"Dive Catch (GK)\"\n        },\n        {\n            \"i\": 111,\n            \"ti\": \"Dive Save (GK)\"\n        },\n        {\n            \"i\": 112,\n            \"ti\": \"Cross blocked and Possession\"\n        },\n        {\n            \"i\": 113,\n            \"ti\": \"Cleared\"\n        },\n        {\n            \"i\": 114,\n            \"ti\": \"Mistake before Goal\"\n        },\n        {\n            \"i\": 115,\n            \"ti\": \"Mistake before Shot\"\n        },\n        {\n            \"i\": 116,\n            \"ti\": \"Incorrect Throw-In\"\n        },\n        {\n            \"i\": 117,\n            \"ti\": \"Foul\"\n        },\n        {\n            \"i\": 118,\n            \"ti\": \"Fouled last third\"\n        },\n        {\n            \"i\": 120,\n            \"ti\": \"Intentional Assist\"\n        },\n        {\n            \"i\": 121,\n            \"ti\": \"Cross Intercepted (GK)\"\n        },\n        {\n            \"i\": 122,\n            \"ti\": \"One-on-One\"\n        },\n        {\n            \"i\": 123,\n            \"ti\": \"Hand Ball\"\n        },\n        {\n            \"i\": 124,\n            \"ti\": \"Interception\"\n        },\n        {\n            \"i\": 125,\n            \"ti\": \"Ball intercepted\"\n        },\n        {\n            \"i\": 126,\n            \"ti\": \"Interception in Box\"\n        },\n        {\n            \"i\": 127,\n            \"ti\": \"Bonus: Last Man Tackle\"\n        },\n        {\n            \"i\": 130,\n            \"ti\": \"Overrun\"\n        },\n        {\n            \"i\": 131,\n            \"ti\": \"own goal\"\n        },\n        {\n            \"i\": 132,\n            \"ti\": \"Penalty conceded\"\n        },\n        {\n            \"i\": 133,\n            \"ti\": \"Penalty saved (GK)\"\n        },\n        {\n            \"i\": 134,\n            \"ti\": \"Penalty won\"\n        },\n        {\n            \"i\": 135,\n            \"ti\": \"Punched Ball (GK)\"\n        },\n        {\n            \"i\": 136,\n            \"ti\": \"Red Card\"\n        },\n        {\n            \"i\": 137,\n            \"ti\": \"Shot saved (GK)\"\n        },\n        {\n            \"i\": 138,\n            \"ti\": \"Distance Shot saved (GK)\"\n        },\n        {\n            \"i\": 139,\n            \"ti\": \"2nd Yellow\"\n        },\n        {\n            \"i\": 141,\n            \"ti\": \"6 Sec violation (GK)\"\n        },\n        {\n            \"i\": 142,\n            \"ti\": \"Standing saved (GK)\"\n        },\n        {\n            \"i\": 143,\n            \"ti\": \"Pass final Third\"\n        },\n        {\n            \"i\": 144,\n            \"ti\": \"Shot Assist\"\n        },\n        {\n            \"i\": 147,\n            \"ti\": \"Offside\"\n        },\n        {\n            \"i\": 148,\n            \"ti\": \"Offside\"\n        },\n        {\n            \"i\": 149,\n            \"ti\": \"Shot on goal\"\n        },\n        {\n            \"i\": 152,\n            \"ti\": \"Contest won\"\n        },\n        {\n            \"i\": 153,\n            \"ti\": \"Corner won\"\n        },\n        {\n            \"i\": 154,\n            \"ti\": \"Tackle won\"\n        },\n        {\n            \"i\": 155,\n            \"ti\": \"Yellow Card\"\n        },\n        {\n            \"i\": 156,\n            \"ti\": \"Starting 11\"\n        },\n        {\n            \"i\": 157,\n            \"ti\": \"Possession lost\"\n        },\n        {\n            \"i\": 159,\n            \"ti\": \"Team Goal\"\n        },\n        {\n            \"i\": 160,\n            \"ti\": \"Goal conceded\"\n        },\n        {\n            \"i\": 165,\n            \"ti\": \"Game Won\"\n        },\n        {\n            \"i\": 166,\n            \"ti\": \"Game Lost\"\n        },\n        {\n            \"i\": 167,\n            \"ti\": \"Played Minutes Bonus\"\n        },\n        {\n            \"i\": 168,\n            \"ti\": \"Team Goal\"\n        },\n        {\n            \"i\": 169,\n            \"ti\": \"Goal conceded\"\n        },\n        {\n            \"i\": 170,\n            \"ti\": \"Team Goal\"\n        },\n        {\n            \"i\": 171,\n            \"ti\": \"Goal conceded\"\n        },\n        {\n            \"i\": 173,\n            \"ti\": \"Goal (GK)\"\n        },\n        {\n            \"i\": 174,\n            \"ti\": \"Goal (Midfielder)\"\n        },\n        {\n            \"i\": 175,\n            \"ti\": \"Goal (Defender)\"\n        },\n        {\n            \"i\": 176,\n            \"ti\": \"Goal (Striker)\"\n        },\n        {\n            \"i\": 177,\n            \"ti\": \"Assist (GK)\"\n        },\n        {\n            \"i\": 178,\n            \"ti\": \"Assist (Defender)\"\n        },\n        {\n            \"i\": 179,\n            \"ti\": \"Assist (Midfielder)\"\n        },\n        {\n            \"i\": 180,\n            \"ti\": \"Assist (Striker)\"\n        },\n        {\n            \"i\": 181,\n            \"ti\": \"Goal Set up (GK)\"\n        },\n        {\n            \"i\": 182,\n            \"ti\": \"Goal Set up (Defender)\"\n        },\n        {\n            \"i\": 183,\n            \"ti\": \"Goal Set up (Midfielder)\"\n        },\n        {\n            \"i\": 184,\n            \"ti\": \"Goal Set up (Striker)\"\n        },\n        {\n            \"i\": 185,\n            \"ti\": \"Goal (Substitute)\"\n        },\n        {\n            \"i\": 186,\n            \"ti\": \"Assist (Substitute)\"\n        },\n        {\n            \"i\": 187,\n            \"ti\": \"Goal Set up (Substitute)\"\n        },\n        {\n            \"i\": 188,\n            \"ti\": \"Clean Sheet (GK)\"\n        },\n        {\n            \"i\": 189,\n            \"ti\": \"Clean Sheet (Defender)\"\n        },\n        {\n            \"i\": 190,\n            \"ti\": \"Clean Sheet (Midfielder)\"\n        },\n        {\n            \"i\": 191,\n            \"ti\": \"Clean Sheet (Striker)\"\n        },\n        {\n            \"i\": 194,\n            \"ti\": \"Big Chance saved (GK)\"\n        },\n        {\n            \"i\": 195,\n            \"ti\": \"Ball covered unchallenged (GK)\"\n        },\n        {\n            \"i\": 196,\n            \"ti\": \"Ball covered challenged (GK)\"\n        },\n        {\n            \"i\": 197,\n            \"ti\": \"Shot on Target (narrow miss)\"\n        },\n        {\n            \"i\": 199,\n            \"ti\": \"Shot on Goal (far away)\"\n        },\n        {\n            \"i\": 200,\n            \"ti\": \"Shot on Target (blocked)\"\n        },\n        {\n            \"i\": 203,\n            \"ti\": \"Penalty saved (penalty shoot-out)\"\n        },\n        {\n            \"i\": 204,\n            \"ti\": \"Penalty missed (penalty shoot-out)\"\n        },\n        {\n            \"i\": 205,\n            \"ti\": \"Penalty scored (penalty shoot-out)\"\n        },\n        {\n            \"i\": 206,\n            \"ti\": \"Shot blocked\"\n        },\n        {\n            \"i\": 207,\n            \"ti\": \"Shot blocked\"\n        },\n        {\n            \"i\": 208,\n            \"ti\": \"Shot blocked\"\n        },\n        {\n            \"i\": -1,\n            \"ti\": \"Eingewechselt\"\n        },\n        {\n            \"i\": -2,\n            \"ti\": \"Ausgewechselt\"\n        },\n        {\n            \"i\": -8,\n            \"ti\": \"Von Anfang an gespielt\"\n        },\n        {\n            \"i\": -7,\n            \"ti\": \"Auf Bank\"\n        },\n        {\n            \"i\": -10,\n            \"ti\": \"Erste Halbzeit des Spiels beendet\"\n        },\n        {\n            \"i\": -17,\n            \"ti\": \"Zweite Halbzeit des Spiels beendet\"\n        }\n    ],\n    \"dds\": {\n        \"1\": \"Assist by {assistBy}\",\n        \"2\": \"Forced by {forcedBy}\",\n        \"3\": \"Goal by {goalBy}\",\n        \"4\": \"-\",\n        \"5\": \"Suspended for next match day\",\n        \"6\": \"Suspended for next match day\",\n        \"7\": \"Missed by {missedBy}\",\n        \"100\": \"-\"\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -3052,62 +3333,67 @@
 	"variable": [
 		{
 			"key": "TOKEN",
-			"value": "{TOKEN}",
+			"value": "TOKEN",
 			"type": "string"
 		},
 		{
 			"key": "leagueId",
-			"value": "{leagueId}",
+			"value": "leagueId",
 			"type": "string"
 		},
 		{
 			"key": "competitionId",
-			"value": "{competitionId}",
+			"value": "competitionId",
 			"type": "string"
 		},
 		{
 			"key": "playerId",
-			"value": "{playerId}",
+			"value": "playerId",
 			"type": "string"
 		},
 		{
 			"key": "teamId",
-			"value": "{teamId}",
+			"value": "teamId",
 			"type": "string"
 		},
 		{
 			"key": "dayNumber",
-			"value": "{dayNumber}",
+			"value": "dayNumber",
 			"type": "string"
 		},
 		{
 			"key": "userId",
-			"value": "{userId}",
+			"value": "userId",
 			"type": "string"
 		},
 		{
 			"key": "activityId",
-			"value": "{activityId}",
+			"value": "activityId",
 			"type": "string"
 		},
 		{
 			"key": "challengeId",
-			"value": "{challengeId}",
+			"value": "challengeId",
 			"type": "string"
 		},
 		{
 			"key": "size",
-			"value": "{size}",
+			"value": "size",
 			"type": "string"
 		},
 		{
 			"key": "email",
-			"value": "{email}",
+			"value": "email",
 			"type": "string"
 		},
 		{
 			"key": "password",
-			"value": "{password}",
+			"value": "password",
+			"type": "string"
+		},
+		{
+			"key": "matchId",
+			"value": "matchId",
 			"type": "string"
 		}
 	]
