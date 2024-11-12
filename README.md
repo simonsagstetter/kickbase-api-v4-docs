@@ -6,11 +6,11 @@ There could be a lot more endpoints but with most I have found you should be abl
 
 Tasks to complete:
 
-- Response Body Description
-- Request Bodies for most of the post or delete methods
+- Response Body Comments
+- Request Bodies for the post or delete methods
 
 Suggestions and contributions are welcome!
 
-[API v4 Documentation Web Version](https://simonsagstetter.github.io/kickbase-api-v4-docs/)
+[API v4 Documentation Web Version](https://simonsagstetter.github.io/kickbase-api-v4-docs/) made with [Apidog](https://apidog.com/blog/export-postman-documentation-to-html-or-markdown/) and [Swagger Hub](https://app.swaggerhub.com/)
 
-[API v4 Documentation Markdown](documentation.md)
+Import the [Postman Collection JSON](kickbase-api-v4-docs.postman_collection.json) into your postman workspace or the [Swagger JSON](kickbase-api-v4-docs.swagger.json) into your swagger hub if you want to play around with the API
