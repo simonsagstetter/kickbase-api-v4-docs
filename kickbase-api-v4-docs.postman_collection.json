@@ -947,7 +947,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/users/:userId/teamcenter?dayNumber=:dayNumber",
+									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/users/:userId/teamcenter?dayNumber=1",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -965,7 +965,7 @@
 									"query": [
 										{
 											"key": "dayNumber",
-											"value": ":dayNumber"
+											"value": "1"
 										}
 									],
 									"variable": [
@@ -1768,13 +1768,16 @@
 											],
 											"variable": [
 												{
-													"key": "leagueId"
+													"key": "leagueId",
+													"value": ""
 												},
 												{
-													"key": "playerId"
+													"key": "playerId",
+													"value": ""
 												},
 												{
-													"key": "timeframe"
+													"key": "timeframe",
+													"value": ""
 												}
 											]
 										}
@@ -1809,7 +1812,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"it\": [\n    {\n      \"dt\": 0,\n      \"mv\": 0\n    }\n  ],\n  \"trp\": 0,\n  \"prlo\": 0,\n  \"lmv\": 0,\n  \"hmv\": 0,\n  \"iso\": true,\n  \"idp\": true\n}"
+									"body": "{\n  \"it\": [\n    {\n      \"dt\": 0, // The number of days since 01-01-1970. 10pm as marketvalue updates are same time evey day\n      \"mv\": 0\n    }\n  ],\n  \"trp\": 0,\n  \"prlo\": 0,\n  \"lmv\": 0,\n  \"hmv\": 0,\n  \"iso\": true,\n  \"idp\": true\n}"
 								}
 							]
 						},
@@ -2072,7 +2075,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/players/:playerId/transferHistory?start=start",
+									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/players/:playerId/transferHistory?start=0",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -2090,7 +2093,7 @@
 									"query": [
 										{
 											"key": "start",
-											"value": "start"
+											"value": "0"
 										}
 									],
 									"variable": [
@@ -4172,13 +4175,16 @@
 											],
 											"variable": [
 												{
-													"key": "competitionId"
+													"key": "competitionId",
+													"value": ""
 												},
 												{
-													"key": "playerId"
+													"key": "playerId",
+													"value": ""
 												},
 												{
-													"key": "timeframe"
+													"key": "timeframe",
+													"value": ""
 												}
 											]
 										}
@@ -4213,7 +4219,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"it\": [\n    {\n      \"dt\": 0,\n      \"mv\": 0\n    }\n  ],\n  \"trp\": 0,\n  \"prlo\": 0,\n  \"lmv\": 0,\n  \"hmv\": 0,\n  \"idp\": true\n}"
+									"body": "{\n  \"it\": [\n    {\n      \"dt\": 0, // The number of days since 01-01-1970. 10pm as marketvalue updates are same time evey day\n      \"mv\": 0\n    }\n  ],\n  \"trp\": 0,\n  \"prlo\": 0,\n  \"lmv\": 0,\n  \"hmv\": 0,\n  \"idp\": true\n}"
 								}
 							]
 						},
@@ -4345,6 +4351,163 @@
 									],
 									"cookie": [],
 									"body": "{\n  \"i\": \"string\",\n  \"tid\": \"string\",\n  \"n\": \"string\",\n  \"t1\": 0,\n  \"t2\": 0,\n  \"t1g\": 0,\n  \"t2g\": 0,\n  \"p\": 0,\n  \"st\": 0,\n  \"mi\": 0,\n  \"mt\": 0,\n  \"mtd\": \"string\",\n  \"md\": \"string\",\n  \"mst\": 0,\n  \"k\": [\n    0\n  ],\n  \"events\": [\n    {\n      \"ei\": \"string\",\n      \"eti\": 0,\n      \"p\": 0,\n      \"mt\": 0,\n      \"att\": 0\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Search",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.kickbase.com/v4/competitions/:competitionId/players/search?leagueId={{leagueId}}&query=Olise&start=0&max=100",
+									"protocol": "https",
+									"host": [
+										"api",
+										"kickbase",
+										"com"
+									],
+									"path": [
+										"v4",
+										"competitions",
+										":competitionId",
+										"players",
+										"search"
+									],
+									"query": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}",
+											"description": "league"
+										},
+										{
+											"key": "query",
+											"value": "Olise",
+											"description": "query string"
+										},
+										{
+											"key": "start",
+											"value": "0",
+											"description": "offset"
+										},
+										{
+											"key": "max",
+											"value": "100",
+											"description": "number of results"
+										}
+									],
+									"variable": [
+										{
+											"key": "competitionId",
+											"value": "{{competitionId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Search",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/competitions/:competitionId/players/search?leagueId={{leagueId}}&query=Olise&start=0&max=100",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"competitions",
+												":competitionId",
+												"players",
+												"search"
+											],
+											"query": [
+												{
+													"key": "leagueId",
+													"value": "{{leagueId}}",
+													"description": "league"
+												},
+												{
+													"key": "query",
+													"value": "Olise",
+													"description": "query string"
+												},
+												{
+													"key": "start",
+													"value": "0",
+													"description": "offset"
+												},
+												{
+													"key": "max",
+													"value": "100",
+													"description": "number of results"
+												}
+											],
+											"variable": [
+												{
+													"key": "competitionId",
+													"value": "{{competitionId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 13 Nov 2024 08:17:07 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"value\": {\n    \"it\": [\n      {\n        \"pi\": \"string\",\n        \"n\": \"string\",\n        \"mv\": 0,\n        \"pos\": 0,\n        \"st\": 0,\n        \"onm\": \"string\",\n        \"iotm\": true,\n        \"tid\": \"string\"\n      }\n    ]\n  }\n}"
 								}
 							]
 						}
