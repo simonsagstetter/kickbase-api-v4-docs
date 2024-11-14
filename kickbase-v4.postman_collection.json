@@ -1,7 +1,8 @@
 {
 	"info": {
 		"_postman_id": "492dcfa9-6962-4641-bf68-a861a00b01f3",
-		"name": "Kickbase API v4 Docs",
+		"name": "Kickbase v4",
+		"description": "This API was published as part of [kickbase-api-doc](https://github.com/kevinskyba/kickbase-api-doc) on GitHub. It is licensed under the [MIT License](https://github.com/kevinskyba/kickbase-api-doc/blob/master/LICENSE). The purpose of this documentation is for scientific reasons only!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30905634"
 	},
@@ -38,12 +39,9 @@
 							}
 						},
 						"url": {
-							"raw": "https://api.kickbase.com/v4/user/login",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/user/login",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -127,7 +125,7 @@
 					]
 				},
 				{
-					"name": "User Settings",
+					"name": "Account Settings",
 					"event": [
 						{
 							"listen": "test",
@@ -155,12 +153,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/user/settings",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/user/settings",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -241,6 +236,1003 @@
 			"name": "Leagues",
 			"item": [
 				{
+					"name": "Achivements",
+					"item": [
+						{
+							"name": "Achievements",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/user/achievements",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"user",
+										"achievements"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "User Achievements",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/user/achievements",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"user",
+												"achievements"
+											],
+											"variable": [
+												{
+													"key": "leagueId",
+													"value": "{{leagueId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 13 Nov 2024 18:15:09 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"it\": [\n        {\n            \"t\": 5,\n            \"n\": \"Match day winner\",\n            \"ac\": 10,\n            \"ise\": true\n        },\n        {\n            \"t\": 1,\n            \"n\": \"Match day winner bronze\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 2,\n            \"n\": \"Match day winner silver\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 3,\n            \"n\": \"Match day winner gold\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 4,\n            \"n\": \"The Special One\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 100,\n            \"n\": \"Match day points bronze\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 101,\n            \"n\": \"Match day points silver\",\n            \"ac\": 2,\n            \"ise\": true\n        },\n        {\n            \"t\": 102,\n            \"n\": \"Match day points gold\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 103,\n            \"n\": \"Match of the century\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 200,\n            \"n\": \"Season points bronze\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 201,\n            \"n\": \"Season points silver\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 202,\n            \"n\": \"Season points gold\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 203,\n            \"n\": \"Season points platinum\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 204,\n            \"n\": \"World cup winner\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 300,\n            \"n\": \"Top scorer\",\n            \"ac\": 5,\n            \"ise\": true\n        },\n        {\n            \"t\": 301,\n            \"n\": \"Match winner\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 302,\n            \"n\": \"World class\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 303,\n            \"n\": \"Football god\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 400,\n            \"n\": \"Team value bronze\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 401,\n            \"n\": \"Team value silver\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 402,\n            \"n\": \"Team value gold\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 403,\n            \"n\": \"Team value platinum\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 404,\n            \"n\": \"The Galactics\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 500,\n            \"n\": \"First deal\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 501,\n            \"n\": \"Transfer King bronze\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 502,\n            \"n\": \"Transfer King silver\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 503,\n            \"n\": \"Transfer King gold\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 504,\n            \"n\": \"F. Magath\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 600,\n            \"n\": \"Kreisliga\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 601,\n            \"n\": \"Regionalliga\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 602,\n            \"n\": \"2. Liga\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 603,\n            \"n\": \"1. Liga\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 700,\n            \"n\": \"The right touch\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 701,\n            \"n\": \"Bronze hand\",\n            \"ac\": 2,\n            \"ise\": true\n        },\n        {\n            \"t\": 702,\n            \"n\": \"Silver hand\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 703,\n            \"n\": \"Golden hand\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 704,\n            \"n\": \"Royal transfer\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 900,\n            \"n\": \"Manager license\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 2001,\n            \"n\": \"Champion\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 2002,\n            \"n\": \"Runner-up\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 3000,\n            \"n\": \"Long bench\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 4000,\n            \"n\": \"Panini\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 4001,\n            \"n\": \"Choreo\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 5001,\n            \"n\": \"MVP\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 7502,\n            \"n\": \"Goal machine\",\n            \"ac\": 10,\n            \"ise\": true\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Achievements by Type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/user/achievements/:type",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"user",
+										"achievements",
+										":type"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										},
+										{
+											"key": "type",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "User Achievements Type Details",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/user/achievements/:type",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"user",
+												"achievements",
+												":type"
+											],
+											"variable": [
+												{
+													"key": "leagueId",
+													"value": "{{leagueId}}"
+												},
+												{
+													"key": "type",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 13 Nov 2024 18:14:29 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"t\": 5,\n    \"n\": \"Match day winner\",\n    \"d\": \"Win the match day\",\n    \"ac\": 10,\n    \"ise\": true,\n    \"er\": 1000000,\n    \"dt\": \"datetimestring\",\n    \"isrp\": true\n}"
+								}
+							]
+						},
+						{
+							"name": "Battle by Type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/battles/:type/users",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"battles",
+										":type",
+										"users"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										},
+										{
+											"key": "type",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "User Battles",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/battles/:type/users",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"battles",
+												":type",
+												"users"
+											],
+											"variable": [
+												{
+													"key": "leagueId",
+													"value": "{{leagueId}}"
+												},
+												{
+													"key": "type",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 13 Nov 2024 18:13:59 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"n\": \"Defensive Dynamo\",\n    \"d\": \"Most points scored with defenders\",\n    \"us\": [\n        {\n            \"u\": {\n                \"i\": \"string\",\n                \"n\": \"string\"\n            },\n            \"pl\": 0,\n            \"v\": \"string\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Activities",
+					"item": [
+						{
+							"name": "Activity Feed",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/activitiesFeed?start=start&max=max",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"activitiesFeed"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "start"
+										},
+										{
+											"key": "max",
+											"value": "max"
+										}
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Activity Feed",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/activitiesFeed/",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"activitiesFeed",
+												""
+											],
+											"variable": [
+												{
+													"key": "leagueId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 12 Nov 2024 10:13:39 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"af\": [\n    {\n      \"i\": \"string\",\n      \"t\": 0,\n      \"coc\": 0,\n      \"data\": {\n        \"bn\": 0,\n        \"day\": 0,\n        \"byr\": \"string\",\n        \"pi\": \"string\",\n        \"pn\": \"string\",\n        \"tid\": \"string\",\n        \"t\": 0,\n        \"trp\": 0\n      },\n      \"dt\": \"string\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Feed Item",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/activitiesFeed/:activityId",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"activitiesFeed",
+										":activityId"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										},
+										{
+											"key": "activityId",
+											"value": "{{activityId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Activity Feed Item",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/activitiesFeed/:activityId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"activitiesFeed",
+												":activityId"
+											],
+											"variable": [
+												{
+													"key": "leagueId"
+												},
+												{
+													"key": "activityId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 12 Nov 2024 10:14:06 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"data\": {\n    \"bn\": 0,\n    \"day\": 0\n  },\n  \"dt\": \"string\",\n  \"t\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "Feed Item Comments",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/activitiesFeed/:activityId/comments?start=start&max=max",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"activitiesFeed",
+										":activityId",
+										"comments"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "start"
+										},
+										{
+											"key": "max",
+											"value": "max"
+										}
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										},
+										{
+											"key": "activityId",
+											"value": "{{activityId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Activity Comments",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/activitiesFeed/:activityId/comments?start=:start&max=:max",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"activitiesFeed",
+												":activityId",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "start",
+													"value": ":start"
+												},
+												{
+													"key": "max",
+													"value": ":max"
+												}
+											],
+											"variable": [
+												{
+													"key": "leagueId"
+												},
+												{
+													"key": "activityId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 12 Nov 2024 10:20:25 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"coc\": 0,\n  \"it\": [\n    {\n      \"dt\": \"string\",\n      \"ui\": \"string\",\n      \"unm\": \"string\",\n      \"prurl\": \"string\",\n      \"comm\": \"string\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Send Feed Item Comment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/activitiesFeed/:activityId",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"activitiesFeed",
+										":activityId"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										},
+										{
+											"key": "activityId",
+											"value": "{{activityId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Members (Admin Only)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/settings/managers",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"settings",
+										"managers"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "League Settings Members (Admin Only)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/settings/managers",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"settings",
+												"managers"
+											],
+											"variable": [
+												{
+													"key": "leagueId",
+													"value": "{{leagueId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 13 Nov 2024 18:06:04 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"us\": [\n        {\n            \"i\": \"string\",\n            \"n\": \"string\",\n            \"isu\": false,\n            \"cbu\": false\n        }\n    ],\n    \"mt\": 0.0,\n    \"day\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "Settings (Admin Only)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/settings",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"settings"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "League Settings (Admin Only)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/settings",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"settings"
+											],
+											"variable": [
+												{
+													"key": "leagueId",
+													"value": "{{leagueId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 13 Nov 2024 18:05:09 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"i\": \"string\",\n    \"lnm\": \"string\",\n    \"d\": \"string\",\n    \"amd\": false,\n    \"isp\": false,\n    \"gpm\": 0\n}"
+								}
+							]
+						}
+					]
+				},
+				{
 					"name": "Market",
 					"item": [
 						{
@@ -260,12 +1252,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/market",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/market",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -370,12 +1359,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/market/:playerId",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/market/:playerId",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -396,7 +1382,83 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Remove Player From Market",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/market/:playerId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"market",
+												":playerId"
+											],
+											"variable": [
+												{
+													"key": "leagueId",
+													"value": "{{leagueId}}"
+												},
+												{
+													"key": "playerId",
+													"value": "{{playerId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 13 Nov 2024 20:02:46 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
 						},
 						{
 							"name": "Set Player Transfer Price",
@@ -414,13 +1476,19 @@
 										"type": "default"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"playerId\": \"118\",\n    \"price\": 31177135\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/market/",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/market/",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -455,13 +1523,19 @@
 										"type": "default"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"price\": {{price}}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/market/:playerId/offers",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/market/:playerId/offers",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -483,7 +1557,93 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Place An Offer",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"price\": 18789943\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/market/:playerId/offers",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"market",
+												":playerId",
+												"offers"
+											],
+											"variable": [
+												{
+													"key": "leagueId",
+													"value": "{{leagueId}}"
+												},
+												{
+													"key": "playerId",
+													"value": "{{playerId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 13 Nov 2024 19:56:40 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"ofi\": \"offerId\"\n}"
+								}
+							]
 						},
 						{
 							"name": "Accept Kickbase Offer",
@@ -502,12 +1662,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/market/:playerId/sell",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/market/:playerId/sell",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -548,15 +1705,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/market/:playerId/offers/:offerId/accept",
-									"protocol": "https",
+									"raw": "{{api_url}}v4/leagues/:leagueId/market/:playerId/offers/:offerId/accept",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}v4"
 									],
 									"path": [
-										"v4",
 										"leagues",
 										":leagueId",
 										"market",
@@ -600,12 +1753,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/market/:playerId/offers/:offerId/decline",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/market/:playerId/offers/:offerId/decline",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -636,7 +1786,7 @@
 							"response": []
 						},
 						{
-							"name": "Withdraw an offer",
+							"name": "Withdraw Offer",
 							"request": {
 								"method": "DELETE",
 								"header": [
@@ -652,19 +1802,17 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/market/:playerId",
-									"protocol": "https",
+									"raw": "{{api_url}}v4/leagues/:leagueId/market/:playerId/offers/:offerId",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}v4"
 									],
 									"path": [
-										"v4",
 										"leagues",
 										":leagueId",
 										"market",
-										":playerId"
+										":playerId",
+										"offers",
+										":offerId"
 									],
 									"variable": [
 										{
@@ -674,60 +1822,19 @@
 										{
 											"key": "playerId",
 											"value": "{{playerId}}"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Scouted Players",
-					"item": [
-						{
-							"name": "Scouted Players List",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "default"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "default"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/scoutedplayers",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"scoutedplayers"
-									],
-									"variable": [
+										},
 										{
-											"key": "leagueId",
-											"value": "{{leagueId}}"
+											"key": "offerId",
+											"value": "{{offerId}}"
 										}
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "Scouted Players List",
+									"name": "Withdraw Offer",
 									"originalRequest": {
-										"method": "GET",
+										"method": "DELETE",
 										"header": [
 											{
 												"key": "Content-Type",
@@ -741,7 +1848,7 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/scoutedplayers",
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/market/:playerId/offers/:offerId",
 											"protocol": "https",
 											"host": [
 												"api",
@@ -752,11 +1859,23 @@
 												"v4",
 												"leagues",
 												":leagueId",
-												"scoutedplayers"
+												"market",
+												":playerId",
+												"offers",
+												":offerId"
 											],
 											"variable": [
 												{
-													"key": "leagueId"
+													"key": "leagueId",
+													"value": "{{leagueId}}"
+												},
+												{
+													"key": "playerId",
+													"value": "{{playerId}}"
+												},
+												{
+													"key": "offerId",
+													"value": "{{offerId}}"
 												}
 											]
 										}
@@ -771,7 +1890,7 @@
 										},
 										{
 											"key": "date",
-											"value": "Tue, 12 Nov 2024 10:03:11 GMT"
+											"value": "Wed, 13 Nov 2024 19:52:10 GMT"
 										},
 										{
 											"key": "cache-control",
@@ -791,147 +1910,233 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"it\": [\n    {\n      \"pi\": \"string\",\n      \"tid\": \"string\",\n      \"n\": \"string\",\n      \"st\": 0,\n      \"pos\": 0,\n      \"mv\": 0,\n      \"onm\": \"string\",\n      \"iotm\": true\n    }\n  ]\n}"
+									"body": "{}"
 								}
 							]
-						},
-						{
-							"name": "Add Player To Scouted Players List",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "default"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "default"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/scoutedplayers/:playerId",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"scoutedplayers",
-										":playerId"
-									],
-									"variable": [
-										{
-											"key": "leagueId",
-											"value": "{{leagueId}}"
-										},
-										{
-											"key": "playerId",
-											"value": "{{playerId}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Remove Player To Scouted Players List",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "default"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "default"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/scoutedplayers/:playerId",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"scoutedplayers",
-										":playerId"
-									],
-									"variable": [
-										{
-											"key": "leagueId",
-											"value": "{{leagueId}}"
-										},
-										{
-											"key": "playerId",
-											"value": "{{playerId}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Clear Scouted Players List",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "default"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "default"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/scoutedplayers",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"scoutedplayers"
-									],
-									"variable": [
-										{
-											"key": "leagueId",
-											"value": "{{leagueId}}"
-										}
-									]
-								}
-							},
-							"response": []
 						}
 					]
 				},
 				{
-					"name": "Managers",
+					"name": "Me",
 					"item": [
 						{
-							"name": "Manager Team Center",
+							"name": "My Budget",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/me/budget",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"me",
+										"budget"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "User League Budget",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/me/budget",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"me",
+												"budget"
+											],
+											"variable": [
+												{
+													"key": "leagueId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 12 Nov 2024 10:22:54 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"pbas\": 0,\n    \"b\": 0,\n    \"bs\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "My Stats",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/me",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"me"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "User League Info",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/me",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"me"
+											],
+											"variable": [
+												{
+													"key": "leagueId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 12 Nov 2024 10:22:33 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"b\": 0,\n  \"bs\": 0,\n  \"mppu\": 0,\n  \"un\": 0,\n  \"adm\": true,\n  \"cpi\": \"string\",\n  \"lnm\": \"string\",\n  \"tpc\": [\n    {\n      \"tid\": \"string\",\n      \"npt\": 0\n    }\n  ],\n  \"mpst\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "My Players",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -947,12 +2152,460 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/users/:userId/teamcenter?dayNumber=1",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/squad",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"squad"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "My Players",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/squad",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"squad"
+											],
+											"variable": [
+												{
+													"key": "leagueId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 12 Nov 2024 10:23:43 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"it\": [\n    {\n      \"mvgl\": 0,\n      \"i\": \"string\",\n      \"n\": \"string\",\n      \"lo\": 0,\n      \"lst\": 0,\n      \"st\": 0,\n      \"mdst\": 0,\n      \"pos\": 0,\n      \"mv\": 0,\n      \"mvt\": 0,\n      \"p\": 0,\n      \"ap\": 0,\n      \"iotm\": true,\n      \"ofc\": 0,\n      \"tid\": \"string\",\n      \"sdmvt\": 0,\n      \"tfhmvt\": 0\n    }\n  ],\n  \"mppu\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "My Eleven",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/teamcenter/myeleven",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"teamcenter",
+										"myeleven"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "My Eleven",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/teamcenter/myeleven",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"teamcenter",
+												"myeleven"
+											],
+											"variable": [
+												{
+													"key": "leagueId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 12 Nov 2024 10:24:05 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"lp\": [\n    {\n      \"i\": \"string\",\n      \"n\": \"string\",\n      \"tid\": \"string\",\n      \"pos\": 0,\n      \"p\": 0,\n      \"mi\": \"string\",\n      \"st\": 0,\n      \"mt\": 0,\n      \"md\": \"string\",\n      \"mst\": 0,\n      \"k\": [\n        {}\n      ],\n      \"mtd\": \"string\"\n    }\n  ],\n  \"nlp\": [\n    {}\n  ],\n  \"p\": 0,\n  \"pa\": true\n}"
+								}
+							]
+						},
+						{
+							"name": "My Lineup",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/lineup",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"lineup"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Save Players Lineup",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/lineup",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"lineup"
+											],
+											"variable": [
+												{
+													"key": "leagueId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 12 Nov 2024 10:24:27 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"it\": [\n    {\n      \"i\": \"string\",\n      \"n\": \"string\",\n      \"ap\": 0,\n      \"lo\": 0,\n      \"st\": 0,\n      \"lst\": 0,\n      \"mdst\": 0,\n      \"tid\": \"string\",\n      \"pos\": 0,\n      \"os\": \"string\",\n      \"ph\": [\n        {\n          \"hp\": true,\n          \"p\": 0\n        }\n      ],\n      \"ht\": true\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Update My Lineup",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"type\":\"string\",\n   \"players\":[\n      null,\n      null,\n      null,\n      null,\n      null,\n      null,\n      null,\n      null,\n      null,\n      null,\n      null\n   ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/lineup",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"lineup"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Save Players Lineup",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n   \"type\":\"3-4-3\",\n   \"players\":[\n      118,\n      null,\n      null,\n      null,\n      null,\n      null,\n      null,\n      null,\n      null,\n      null,\n      null\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api_url}}/v4/leagues/:leagueId/lineup",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"lineup"
+											],
+											"variable": [
+												{
+													"key": "leagueId",
+													"value": "{{leagueId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Thu, 14 Nov 2024 09:25:39 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Managers",
+					"item": [
+						{
+							"name": "Team Center",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/users/:userId/teamcenter?dayNumber={{dayNumber}}",
+									"host": [
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -965,7 +2618,7 @@
 									"query": [
 										{
 											"key": "dayNumber",
-											"value": "1"
+											"value": "{{dayNumber}}"
 										}
 									],
 									"variable": [
@@ -1064,7 +2717,7 @@
 							]
 						},
 						{
-							"name": "Manager Profile Dashboard",
+							"name": "Profile",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -1080,12 +2733,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/managers/:userId/dashboard",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/managers/:userId/dashboard",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -1185,7 +2835,7 @@
 							]
 						},
 						{
-							"name": "Manager Squad Details",
+							"name": "Squad Details",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -1201,12 +2851,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/managers/:userId/squad",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/managers/:userId/squad",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -1306,7 +2953,7 @@
 							]
 						},
 						{
-							"name": "Manager Performance",
+							"name": "Performance",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -1322,12 +2969,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/managers/:userId/performance",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/managers/:userId/performance",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -1427,7 +3071,7 @@
 							]
 						},
 						{
-							"name": "Manager Profile Transfers",
+							"name": "Transfers",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -1443,12 +3087,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/managers/:userId/transfer?start=:start",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/managers/:userId/transfer?start=:start",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -1581,12 +3222,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/players/:playerId",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/players/:playerId",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -1602,7 +3240,7 @@
 										},
 										{
 											"key": "playerId",
-											"value": "{{playerId}}"
+											"value": ""
 										}
 									]
 								}
@@ -1684,7 +3322,7 @@
 							]
 						},
 						{
-							"name": "Player Market Value",
+							"name": "Market Value",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -1700,12 +3338,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/players/:playerId/marketvalue/:timeframe",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/players/:playerId/marketvalue/:timeframe",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -1817,7 +3452,7 @@
 							]
 						},
 						{
-							"name": "Player Performance",
+							"name": "Performance",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -1833,12 +3468,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/players/:playerId/performance",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/players/:playerId/performance",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -1938,7 +3570,7 @@
 							]
 						},
 						{
-							"name": "Player Transfers",
+							"name": "Transfers",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -1954,12 +3586,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/players/:playerId/transfers",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/players/:playerId/transfers",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -2059,7 +3688,7 @@
 							]
 						},
 						{
-							"name": "Player Transfer History",
+							"name": "Transfer History",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2075,12 +3704,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/players/:playerId/transferHistory?start=0",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/players/:playerId/transferHistory?start=0",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -2188,10 +3814,243 @@
 					]
 				},
 				{
+					"name": "Scouted Players",
+					"item": [
+						{
+							"name": "Scouted Players List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/scoutedplayers",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"scoutedplayers"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Scouted Players List",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "default"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/scoutedplayers",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"scoutedplayers"
+											],
+											"variable": [
+												{
+													"key": "leagueId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 12 Nov 2024 10:03:11 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"it\": [\n    {\n      \"pi\": \"string\",\n      \"tid\": \"string\",\n      \"n\": \"string\",\n      \"st\": 0,\n      \"pos\": 0,\n      \"mv\": 0,\n      \"onm\": \"string\",\n      \"iotm\": true\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Add Player To Scouted Players List",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/scoutedplayers/:playerId",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"scoutedplayers",
+										":playerId"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										},
+										{
+											"key": "playerId",
+											"value": "{{playerId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Player To Scouted Players List",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/scoutedplayers/:playerId",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"scoutedplayers",
+										":playerId"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										},
+										{
+											"key": "playerId",
+											"value": "{{playerId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Clear Scouted Players List",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/leagues/:leagueId/scoutedplayers",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"leagues",
+										":leagueId",
+										"scoutedplayers"
+									],
+									"variable": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Teams",
 					"item": [
 						{
-							"name": "Team Profile Data",
+							"name": "Profile",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2207,12 +4066,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/teams/:teamId/teamprofile/",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/teams/:teamId/teamprofile/",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -2240,438 +4096,7 @@
 					]
 				},
 				{
-					"name": "Activities",
-					"item": [
-						{
-							"name": "Activity Feed",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/activitiesFeed?start=start&max=max",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"activitiesFeed"
-									],
-									"query": [
-										{
-											"key": "start",
-											"value": "start"
-										},
-										{
-											"key": "max",
-											"value": "max"
-										}
-									],
-									"variable": [
-										{
-											"key": "leagueId",
-											"value": "{{leagueId}}"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Activity Feed",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/activitiesFeed/",
-											"protocol": "https",
-											"host": [
-												"api",
-												"kickbase",
-												"com"
-											],
-											"path": [
-												"v4",
-												"leagues",
-												":leagueId",
-												"activitiesFeed",
-												""
-											],
-											"variable": [
-												{
-													"key": "leagueId"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "content-type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "date",
-											"value": "Tue, 12 Nov 2024 10:13:39 GMT"
-										},
-										{
-											"key": "cache-control",
-											"value": "no-store, no-cache"
-										},
-										{
-											"key": "content-encoding",
-											"value": "br"
-										},
-										{
-											"key": "transfer-encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "vary",
-											"value": "Accept-Encoding"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"af\": [\n    {\n      \"i\": \"string\",\n      \"t\": 0,\n      \"coc\": 0,\n      \"data\": {\n        \"bn\": 0,\n        \"day\": 0,\n        \"byr\": \"string\",\n        \"pi\": \"string\",\n        \"pn\": \"string\",\n        \"tid\": \"string\",\n        \"t\": 0,\n        \"trp\": 0\n      },\n      \"dt\": \"string\"\n    }\n  ]\n}"
-								}
-							]
-						},
-						{
-							"name": "Activity Feed Item",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/activitiesFeed/:activityId",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"activitiesFeed",
-										":activityId"
-									],
-									"variable": [
-										{
-											"key": "leagueId",
-											"value": "{{leagueId}}"
-										},
-										{
-											"key": "activityId",
-											"value": "{{activityId}}"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Activity Feed Item",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/activitiesFeed/:activityId",
-											"protocol": "https",
-											"host": [
-												"api",
-												"kickbase",
-												"com"
-											],
-											"path": [
-												"v4",
-												"leagues",
-												":leagueId",
-												"activitiesFeed",
-												":activityId"
-											],
-											"variable": [
-												{
-													"key": "leagueId"
-												},
-												{
-													"key": "activityId"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "content-type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "date",
-											"value": "Tue, 12 Nov 2024 10:14:06 GMT"
-										},
-										{
-											"key": "cache-control",
-											"value": "no-store, no-cache"
-										},
-										{
-											"key": "content-encoding",
-											"value": "br"
-										},
-										{
-											"key": "transfer-encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "vary",
-											"value": "Accept-Encoding"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"data\": {\n    \"bn\": 0,\n    \"day\": 0\n  },\n  \"dt\": \"string\",\n  \"t\": 0\n}"
-								}
-							]
-						},
-						{
-							"name": "Activity Comments",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/activitiesFeed/:activityId/comments?start=start&max=max",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"activitiesFeed",
-										":activityId",
-										"comments"
-									],
-									"query": [
-										{
-											"key": "start",
-											"value": "start"
-										},
-										{
-											"key": "max",
-											"value": "max"
-										}
-									],
-									"variable": [
-										{
-											"key": "leagueId",
-											"value": "{{leagueId}}"
-										},
-										{
-											"key": "activityId",
-											"value": "{{activityId}}"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Activity Comments",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "https://api.kickbase.com/v4/leagues/:leagueId/activitiesFeed/:activityId/comments?start=:start&max=:max",
-											"protocol": "https",
-											"host": [
-												"api",
-												"kickbase",
-												"com"
-											],
-											"path": [
-												"v4",
-												"leagues",
-												":leagueId",
-												"activitiesFeed",
-												":activityId",
-												"comments"
-											],
-											"query": [
-												{
-													"key": "start",
-													"value": ":start"
-												},
-												{
-													"key": "max",
-													"value": ":max"
-												}
-											],
-											"variable": [
-												{
-													"key": "leagueId"
-												},
-												{
-													"key": "activityId"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "content-type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "date",
-											"value": "Tue, 12 Nov 2024 10:20:25 GMT"
-										},
-										{
-											"key": "cache-control",
-											"value": "no-store, no-cache"
-										},
-										{
-											"key": "content-encoding",
-											"value": "br"
-										},
-										{
-											"key": "transfer-encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "vary",
-											"value": "Accept-Encoding"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"coc\": 0,\n  \"it\": [\n    {\n      \"dt\": \"string\",\n      \"ui\": \"string\",\n      \"unm\": \"string\",\n      \"prurl\": \"string\",\n      \"comm\": \"string\"\n    }\n  ]\n}"
-								}
-							]
-						},
-						{
-							"name": "Send Activity Comment",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/activitiesFeed/:activityId",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"activitiesFeed",
-										":activityId"
-									],
-									"variable": [
-										{
-											"key": "leagueId",
-											"value": "{{leagueId}}"
-										},
-										{
-											"key": "activityId",
-											"value": "{{activityId}}"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "League Selection ",
+					"name": "List",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2687,12 +4112,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/leagues/selection",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/leagues/selection",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -2768,7 +4190,7 @@
 					]
 				},
 				{
-					"name": "League Overview",
+					"name": "Overview",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2784,15 +4206,11 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/leagues/:leagueId/overview?includeManagersAndBattles=true",
-							"protocol": "https",
+							"raw": "{{api_url}}v4/leagues/:leagueId/overview?includeManagersAndBattles={{includeManagersAndBattles}}",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}v4"
 							],
 							"path": [
-								"v4",
 								"leagues",
 								":leagueId",
 								"overview"
@@ -2800,7 +4218,8 @@
 							"query": [
 								{
 									"key": "includeManagersAndBattles",
-									"value": "true"
+									"value": "{{includeManagersAndBattles}}",
+									"description": "default false, set true to see managers and battle"
 								}
 							],
 							"variable": [
@@ -2890,229 +4309,7 @@
 					]
 				},
 				{
-					"name": "User League Info",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "default"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "https://api.kickbase.com/v4/leagues/:leagueId/me",
-							"protocol": "https",
-							"host": [
-								"api",
-								"kickbase",
-								"com"
-							],
-							"path": [
-								"v4",
-								"leagues",
-								":leagueId",
-								"me"
-							],
-							"variable": [
-								{
-									"key": "leagueId",
-									"value": "{{leagueId}}"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "User League Info",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "default"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "default"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/me",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"me"
-									],
-									"variable": [
-										{
-											"key": "leagueId"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "content-type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "date",
-									"value": "Tue, 12 Nov 2024 10:22:33 GMT"
-								},
-								{
-									"key": "cache-control",
-									"value": "no-store, no-cache"
-								},
-								{
-									"key": "content-encoding",
-									"value": "br"
-								},
-								{
-									"key": "transfer-encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "vary",
-									"value": "Accept-Encoding"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"b\": 0,\n  \"bs\": 0,\n  \"mppu\": 0,\n  \"un\": 0,\n  \"adm\": true,\n  \"cpi\": \"string\",\n  \"lnm\": \"string\",\n  \"tpc\": [\n    {\n      \"tid\": \"string\",\n      \"npt\": 0\n    }\n  ],\n  \"mpst\": 0\n}"
-						}
-					]
-				},
-				{
-					"name": "User League Budget",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "default"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "https://api.kickbase.com/v4/leagues/:leagueId/me/budget",
-							"protocol": "https",
-							"host": [
-								"api",
-								"kickbase",
-								"com"
-							],
-							"path": [
-								"v4",
-								"leagues",
-								":leagueId",
-								"me",
-								"budget"
-							],
-							"variable": [
-								{
-									"key": "leagueId",
-									"value": "{{leagueId}}"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "User League Budget",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "default"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "default"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/me/budget",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"me",
-										"budget"
-									],
-									"variable": [
-										{
-											"key": "leagueId"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "content-type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "date",
-									"value": "Tue, 12 Nov 2024 10:22:54 GMT"
-								},
-								{
-									"key": "cache-control",
-									"value": "no-store, no-cache"
-								},
-								{
-									"key": "content-encoding",
-									"value": "br"
-								},
-								{
-									"key": "transfer-encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "vary",
-									"value": "Accept-Encoding"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"pbas\": 0,\n    \"b\": 0,\n    \"bs\": 0\n}"
-						}
-					]
-				},
-				{
-					"name": "League Ranking",
+					"name": "Ranking",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3128,12 +4325,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/leagues/:leagueId/ranking?dayNumber=dayNumber",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/leagues/:leagueId/ranking?dayNumber={{dayNumber}}",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -3144,7 +4338,7 @@
 							"query": [
 								{
 									"key": "dayNumber",
-									"value": "dayNumber"
+									"value": "{{dayNumber}}"
 								}
 							],
 							"variable": [
@@ -3232,378 +4426,6 @@
 							"body": "{\n  \"ti\": \"string\",\n  \"cpi\": \"string\",\n  \"ish\": true,\n  \"us\": [\n    {\n      \"iapl\": true,\n      \"i\": \"string\",\n      \"n\": \"string\",\n      \"adm\": true,\n      \"sp\": 0,\n      \"mdp\": 0,\n      \"shp\": 0,\n      \"tv\": 0,\n      \"spl\": 0,\n      \"mdpl\": 0,\n      \"pa\": true,\n      \"lp\": [\n        0\n      ]\n    }\n  ],\n  \"day\": 0,\n  \"shmdn\": 0,\n  \"sn\": \"string\",\n  \"il\": true,\n  \"nd\": 0,\n  \"lfmd\": 0,\n  \"ia\": true\n}"
 						}
 					]
-				},
-				{
-					"name": "My Players",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://api.kickbase.com/v4/leagues/:leagueId/squad",
-							"protocol": "https",
-							"host": [
-								"api",
-								"kickbase",
-								"com"
-							],
-							"path": [
-								"v4",
-								"leagues",
-								":leagueId",
-								"squad"
-							],
-							"variable": [
-								{
-									"key": "leagueId",
-									"value": "{{leagueId}}"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "My Players",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/squad",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"squad"
-									],
-									"variable": [
-										{
-											"key": "leagueId"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "content-type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "date",
-									"value": "Tue, 12 Nov 2024 10:23:43 GMT"
-								},
-								{
-									"key": "cache-control",
-									"value": "no-store, no-cache"
-								},
-								{
-									"key": "content-encoding",
-									"value": "br"
-								},
-								{
-									"key": "transfer-encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "vary",
-									"value": "Accept-Encoding"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"it\": [\n    {\n      \"mvgl\": 0,\n      \"i\": \"string\",\n      \"n\": \"string\",\n      \"lo\": 0,\n      \"lst\": 0,\n      \"st\": 0,\n      \"mdst\": 0,\n      \"pos\": 0,\n      \"mv\": 0,\n      \"mvt\": 0,\n      \"p\": 0,\n      \"ap\": 0,\n      \"iotm\": true,\n      \"ofc\": 0,\n      \"tid\": \"string\",\n      \"sdmvt\": 0,\n      \"tfhmvt\": 0\n    }\n  ],\n  \"mppu\": 0\n}"
-						}
-					]
-				},
-				{
-					"name": "My Eleven",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "default"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "https://api.kickbase.com/v4/leagues/:leagueId/teamcenter/myeleven",
-							"protocol": "https",
-							"host": [
-								"api",
-								"kickbase",
-								"com"
-							],
-							"path": [
-								"v4",
-								"leagues",
-								":leagueId",
-								"teamcenter",
-								"myeleven"
-							],
-							"variable": [
-								{
-									"key": "leagueId",
-									"value": "{{leagueId}}"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "My Eleven",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "default"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "default"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/teamcenter/myeleven",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"teamcenter",
-										"myeleven"
-									],
-									"variable": [
-										{
-											"key": "leagueId"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "content-type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "date",
-									"value": "Tue, 12 Nov 2024 10:24:05 GMT"
-								},
-								{
-									"key": "cache-control",
-									"value": "no-store, no-cache"
-								},
-								{
-									"key": "content-encoding",
-									"value": "br"
-								},
-								{
-									"key": "transfer-encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "vary",
-									"value": "Accept-Encoding"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"lp\": [\n    {\n      \"i\": \"string\",\n      \"n\": \"string\",\n      \"tid\": \"string\",\n      \"pos\": 0,\n      \"p\": 0,\n      \"mi\": \"string\",\n      \"st\": 0,\n      \"mt\": 0,\n      \"md\": \"string\",\n      \"mst\": 0,\n      \"k\": [\n        {}\n      ],\n      \"mtd\": \"string\"\n    }\n  ],\n  \"nlp\": [\n    {}\n  ],\n  \"p\": 0,\n  \"pa\": true\n}"
-						}
-					]
-				},
-				{
-					"name": "Save Players Lineup",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "default"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "https://api.kickbase.com/v4/leagues/:leagueId/lineup",
-							"protocol": "https",
-							"host": [
-								"api",
-								"kickbase",
-								"com"
-							],
-							"path": [
-								"v4",
-								"leagues",
-								":leagueId",
-								"lineup"
-							],
-							"variable": [
-								{
-									"key": "leagueId",
-									"value": "{{leagueId}}"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Save Players Lineup",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "default"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "default"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/leagues/:leagueId/lineup",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"leagues",
-										":leagueId",
-										"lineup"
-									],
-									"variable": [
-										{
-											"key": "leagueId"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "content-type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "date",
-									"value": "Tue, 12 Nov 2024 10:24:27 GMT"
-								},
-								{
-									"key": "cache-control",
-									"value": "no-store, no-cache"
-								},
-								{
-									"key": "content-encoding",
-									"value": "br"
-								},
-								{
-									"key": "transfer-encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "vary",
-									"value": "Accept-Encoding"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"it\": [\n    {\n      \"i\": \"string\",\n      \"n\": \"string\",\n      \"ap\": 0,\n      \"lo\": 0,\n      \"st\": 0,\n      \"lst\": 0,\n      \"mdst\": 0,\n      \"tid\": \"string\",\n      \"pos\": 0,\n      \"os\": \"string\",\n      \"ph\": [\n        {\n          \"hp\": true,\n          \"p\": 0\n        }\n      ],\n      \"ht\": true\n    }\n  ]\n}"
-						}
-					]
-				},
-				{
-					"name": "Save Players Lineup",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "default"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "https://api.kickbase.com/v4/leagues/:leagueId/lineup",
-							"protocol": "https",
-							"host": [
-								"api",
-								"kickbase",
-								"com"
-							],
-							"path": [
-								"v4",
-								"leagues",
-								":leagueId",
-								"lineup"
-							],
-							"variable": [
-								{
-									"key": "leagueId",
-									"value": "{{leagueId}}"
-								}
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -3627,12 +4449,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/matches/:matchId/details",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/matches/:matchId/details",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -3719,6 +4538,114 @@
 							"body": "{\n  \"t1\": \"string\",\n  \"t2\": \"string\",\n  \"t1n\": \"string\",\n  \"t2n\": \"string\",\n  \"t1sy\": \"string\",\n  \"t2sy\": \"string\",\n  \"t1g\": 0,\n  \"t2g\": 0,\n  \"mt\": 0,\n  \"md\": \"string\",\n  \"mst\": 0,\n  \"mtd\": \"string\",\n  \"il\": true,\n  \"t1lp\": [\n    {\n      \"i\": 0,\n      \"n\": \"string\",\n      \"pos\": 0\n    }\n  ],\n  \"t1nlp\": [\n    {\n      \"i\": 0,\n      \"n\": \"string\",\n      \"pos\": 0\n    }\n  ],\n  \"t2lp\": [\n    {\n      \"i\": 0,\n      \"n\": \"string\",\n      \"pos\": 0\n    }\n  ],\n  \"t2nlp\": [\n    {\n      \"i\": 0,\n      \"n\": \"string\",\n      \"pos\": 0\n    }\n  ],\n  \"ts1\": \"string\",\n  \"ts2\": \"string\",\n  \"events\": [\n    {\n      \"pi\": \"string\",\n      \"tid\": \"string\",\n      \"ke\": 0,\n      \"mt\": 0,\n      \"pn\": \"string\",\n      \"rev\": {\n        \"pi\": \"string\",\n        \"pn\": \"string\",\n        \"tid\": \"string\",\n        \"ke\": 0\n      }\n    }\n  ]\n}"
 						}
 					]
+				},
+				{
+					"name": "Match Betlink",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/v4/matches/:matchId/betlink",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"v4",
+								"matches",
+								":matchId",
+								"betlink"
+							],
+							"variable": [
+								{
+									"key": "matchId",
+									"value": "{{matchId}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Match Betlink",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.kickbase.com/v4/matches/:matchId/betlink",
+									"protocol": "https",
+									"host": [
+										"api",
+										"kickbase",
+										"com"
+									],
+									"path": [
+										"v4",
+										"matches",
+										":matchId",
+										"betlink"
+									],
+									"variable": [
+										{
+											"key": "matchId",
+											"value": "{{matchId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Wed, 13 Nov 2024 18:09:12 GMT"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store, no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "br"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"string\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -3745,12 +4672,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/competitions/:competitionId/players?dayNumber=dayNumber",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/competitions/:competitionId/players?dayNumber={{dayNumber}}",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -3761,7 +4685,8 @@
 									"query": [
 										{
 											"key": "dayNumber",
-											"value": "dayNumber"
+											"value": "{{dayNumber}}",
+											"description": "Probably available on the next update"
 										}
 									],
 									"variable": [
@@ -3851,6 +4776,160 @@
 							]
 						},
 						{
+							"name": "Search",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/competitions/:competitionId/players/search?leagueId={{leagueId}}&query={{query}}&start={{start}}&max={{max}}",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"competitions",
+										":competitionId",
+										"players",
+										"search"
+									],
+									"query": [
+										{
+											"key": "leagueId",
+											"value": "{{leagueId}}",
+											"description": "league"
+										},
+										{
+											"key": "query",
+											"value": "{{query}}",
+											"description": "query string"
+										},
+										{
+											"key": "start",
+											"value": "{{start}}",
+											"description": "offset"
+										},
+										{
+											"key": "max",
+											"value": "{{max}}",
+											"description": "number of results"
+										}
+									],
+									"variable": [
+										{
+											"key": "competitionId",
+											"value": "{{competitionId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Search",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/competitions/:competitionId/players/search?leagueId={{leagueId}}&query=Olise&start=0&max=100",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"competitions",
+												":competitionId",
+												"players",
+												"search"
+											],
+											"query": [
+												{
+													"key": "leagueId",
+													"value": "{{leagueId}}",
+													"description": "league"
+												},
+												{
+													"key": "query",
+													"value": "Olise",
+													"description": "query string"
+												},
+												{
+													"key": "start",
+													"value": "0",
+													"description": "offset"
+												},
+												{
+													"key": "max",
+													"value": "100",
+													"description": "number of results"
+												}
+											],
+											"variable": [
+												{
+													"key": "competitionId",
+													"value": "{{competitionId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 13 Nov 2024 08:17:07 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"value\": {\n    \"it\": [\n      {\n        \"pi\": \"string\",\n        \"n\": \"string\",\n        \"mv\": 0,\n        \"pos\": 0,\n        \"st\": 0,\n        \"onm\": \"string\",\n        \"iotm\": true,\n        \"tid\": \"string\"\n      }\n    ]\n  }\n}"
+								}
+							]
+						},
+						{
 							"name": "Details",
 							"request": {
 								"method": "GET",
@@ -3867,15 +4946,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/competitions/:competitionId/players/:playerId",
-									"protocol": "https",
+									"raw": "{{api_url}}v4/competitions/:competitionId/players/:playerId",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}v4"
 									],
 									"path": [
-										"v4",
 										"competitions",
 										":competitionId",
 										"players",
@@ -3986,15 +5061,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/competitions/:competitionId/players/:playerId/performance",
-									"protocol": "https",
+									"raw": "{{api_url}}v4/competitions/:competitionId/players/:playerId/performance",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}v4"
 									],
 									"path": [
-										"v4",
 										"competitions",
 										":competitionId",
 										"players",
@@ -4107,12 +5178,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/competitions/:competitionId/players/:playerId/marketvalue/:timeframe",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/competitions/:competitionId/players/:playerId/marketvalue/:timeframe",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -4134,7 +5202,8 @@
 										},
 										{
 											"key": "timeframe",
-											"value": "{{timeframe}}"
+											"value": "{{timeframe}}",
+											"description": "92, 365 but probably more possibilties with upcoming releases"
 										}
 									]
 								}
@@ -4240,12 +5309,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/competitions/:competitionId/playercenter/:playerId?dayNumber=:dayNumber",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/competitions/:competitionId/playercenter/:playerId?dayNumber={{dayNumber}}",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -4257,7 +5323,7 @@
 									"query": [
 										{
 											"key": "dayNumber",
-											"value": ":dayNumber"
+											"value": "{{dayNumber}}"
 										}
 									],
 									"variable": [
@@ -4353,163 +5419,6 @@
 									"body": "{\n  \"i\": \"string\",\n  \"tid\": \"string\",\n  \"n\": \"string\",\n  \"t1\": 0,\n  \"t2\": 0,\n  \"t1g\": 0,\n  \"t2g\": 0,\n  \"p\": 0,\n  \"st\": 0,\n  \"mi\": 0,\n  \"mt\": 0,\n  \"mtd\": \"string\",\n  \"md\": \"string\",\n  \"mst\": 0,\n  \"k\": [\n    0\n  ],\n  \"events\": [\n    {\n      \"ei\": \"string\",\n      \"eti\": 0,\n      \"p\": 0,\n      \"mt\": 0,\n      \"att\": 0\n    }\n  ]\n}"
 								}
 							]
-						},
-						{
-							"name": "Search",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/competitions/:competitionId/players/search?leagueId={{leagueId}}&query=Olise&start=0&max=100",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"competitions",
-										":competitionId",
-										"players",
-										"search"
-									],
-									"query": [
-										{
-											"key": "leagueId",
-											"value": "{{leagueId}}",
-											"description": "league"
-										},
-										{
-											"key": "query",
-											"value": "Olise",
-											"description": "query string"
-										},
-										{
-											"key": "start",
-											"value": "0",
-											"description": "offset"
-										},
-										{
-											"key": "max",
-											"value": "100",
-											"description": "number of results"
-										}
-									],
-									"variable": [
-										{
-											"key": "competitionId",
-											"value": "{{competitionId}}"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Search",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "https://api.kickbase.com/v4/competitions/:competitionId/players/search?leagueId={{leagueId}}&query=Olise&start=0&max=100",
-											"protocol": "https",
-											"host": [
-												"api",
-												"kickbase",
-												"com"
-											],
-											"path": [
-												"v4",
-												"competitions",
-												":competitionId",
-												"players",
-												"search"
-											],
-											"query": [
-												{
-													"key": "leagueId",
-													"value": "{{leagueId}}",
-													"description": "league"
-												},
-												{
-													"key": "query",
-													"value": "Olise",
-													"description": "query string"
-												},
-												{
-													"key": "start",
-													"value": "0",
-													"description": "offset"
-												},
-												{
-													"key": "max",
-													"value": "100",
-													"description": "number of results"
-												}
-											],
-											"variable": [
-												{
-													"key": "competitionId",
-													"value": "{{competitionId}}"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "content-type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "date",
-											"value": "Wed, 13 Nov 2024 08:17:07 GMT"
-										},
-										{
-											"key": "cache-control",
-											"value": "no-store, no-cache"
-										},
-										{
-											"key": "content-encoding",
-											"value": "br"
-										},
-										{
-											"key": "transfer-encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "vary",
-											"value": "Accept-Encoding"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"value\": {\n    \"it\": [\n      {\n        \"pi\": \"string\",\n        \"n\": \"string\",\n        \"mv\": 0,\n        \"pos\": 0,\n        \"st\": 0,\n        \"onm\": \"string\",\n        \"iotm\": true,\n        \"tid\": \"string\"\n      }\n    ]\n  }\n}"
-								}
-							]
 						}
 					]
 				},
@@ -4533,12 +5442,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/competitions/:competitionId/teams/:teamId/teamprofile",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/competitions/:competitionId/teams/:teamId/teamprofile",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -4654,12 +5560,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/competitions/:competitionId/teams/:teamId/teamcenter?dayNumber=dayNumber",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/competitions/:competitionId/teams/:teamId/teamcenter?dayNumber={{dayNumber}}",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -4672,7 +5575,7 @@
 									"query": [
 										{
 											"key": "dayNumber",
-											"value": "dayNumber"
+											"value": "{{dayNumber}}"
 										}
 									],
 									"variable": [
@@ -4789,12 +5692,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/competitions/:competitionId/matchdays",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/competitions/:competitionId/matchdays",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -4899,12 +5799,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/competitions/:competitionId/table",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/competitions/:competitionId/table",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -4993,7 +5890,7 @@
 					]
 				},
 				{
-					"name": "Ranking",
+					"name": "Team Ranking",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -5009,12 +5906,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/competitions/:competitionId/ranking",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/competitions/:competitionId/ranking",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -5111,7 +6005,7 @@
 					"name": "Favorites",
 					"item": [
 						{
-							"name": "Challenge Favorites",
+							"name": "Favorite Managers",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -5127,12 +6021,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/challenges/:challengeId/favorites",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/challenges/:challengeId/favorites",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -5221,6 +6112,141 @@
 							]
 						},
 						{
+							"name": "Search Favorite Managers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/challenges/:challengeId/favorites/search?query={{query}}&start={{start}}&max={{max}}",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"challenges",
+										":challengeId",
+										"favorites",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "{{query}}"
+										},
+										{
+											"key": "start",
+											"value": "{{start}}"
+										},
+										{
+											"key": "max",
+											"value": "{{max}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "challengeId",
+											"value": "{{challengeId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Favorite Managers Copy",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{api_url}}/v4/challenges/:challengeId/favorites/search?query={{query}}&start={{start}}&max={{max}}",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"v4",
+												"challenges",
+												":challengeId",
+												"favorites",
+												"search"
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "{{query}}"
+												},
+												{
+													"key": "start",
+													"value": "{{start}}"
+												},
+												{
+													"key": "max",
+													"value": "{{max}}"
+												}
+											],
+											"variable": [
+												{
+													"key": "challengeId",
+													"value": "{{challengeId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Thu, 14 Nov 2024 14:53:25 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"si\": 0,\n    \"tc\": 0,\n    \"it\": []\n}"
+								}
+							]
+						},
+						{
 							"name": "Add Manager To Favorites",
 							"request": {
 								"method": "POST",
@@ -5236,29 +6262,203 @@
 										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ui\": \"userId\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "https://api.kickbase.com/v4/challenges/:challengeId/favorites",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/challenges/favorites",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
 										"challenges",
-										":challengeId",
 										"favorites"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add Manager To Favorites",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ui\": \"userId\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api_url}}/v4/challenges/favorites",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"v4",
+												"challenges",
+												"favorites"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Thu, 14 Nov 2024 14:49:51 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
+						},
+						{
+							"name": "Remove Manager From Favorites",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/challenges/favorites/:userId",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"challenges",
+										"favorites",
+										":userId"
 									],
 									"variable": [
 										{
-											"key": "challengeId",
-											"value": "{{challengeId}}"
+											"key": "userId",
+											"value": "{{userId}}"
 										}
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Remove Manager From Favorites",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{api_url}}/v4/challenges/favorites/:userId",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"v4",
+												"challenges",
+												"favorites",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Thu, 14 Nov 2024 14:51:51 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
 						}
 					]
 				},
@@ -5282,12 +6482,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/challenges/:challengeId/lineup/overview",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/challenges/:challengeId/lineup/overview",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -5394,12 +6591,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/challenges/:challengeId/lineup/teams",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/challenges/:challengeId/lineup/teams",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -5506,12 +6700,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/challenges/:challengeId/lineup/livepitch",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/challenges/:challengeId/lineup/livepitch",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -5618,12 +6809,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/challenges/:challengeId/lineup/selection",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/challenges/:challengeId/lineup/selection?position={{position}}&sorting={{sorting}}&query={{query}}&start={{start}}&max={{max}}",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -5631,6 +6819,28 @@
 										":challengeId",
 										"lineup",
 										"selection"
+									],
+									"query": [
+										{
+											"key": "position",
+											"value": "{{position}}"
+										},
+										{
+											"key": "sorting",
+											"value": "{{sorting}}"
+										},
+										{
+											"key": "query",
+											"value": "{{query}}"
+										},
+										{
+											"key": "start",
+											"value": "{{start}}"
+										},
+										{
+											"key": "max",
+											"value": "{{max}}"
+										}
 									],
 									"variable": [
 										{
@@ -5658,12 +6868,9 @@
 											}
 										],
 										"url": {
-											"raw": "https://api.kickbase.com/v4/challenges/:challengeId/lineup/selection",
-											"protocol": "https",
+											"raw": "{{api_url}}/v4/challenges/:challengeId/lineup/selection?position={{position}}&sorting={{sorting}}&query={{query}}&start={{start}}&max={{max}}",
 											"host": [
-												"api",
-												"kickbase",
-												"com"
+												"{{api_url}}"
 											],
 											"path": [
 												"v4",
@@ -5672,9 +6879,32 @@
 												"lineup",
 												"selection"
 											],
+											"query": [
+												{
+													"key": "position",
+													"value": "{{position}}"
+												},
+												{
+													"key": "sorting",
+													"value": "{{sorting}}"
+												},
+												{
+													"key": "query",
+													"value": "{{query}}"
+												},
+												{
+													"key": "start",
+													"value": "{{start}}"
+												},
+												{
+													"key": "max",
+													"value": "{{max}}"
+												}
+											],
 											"variable": [
 												{
-													"key": "challengeId"
+													"key": "challengeId",
+													"value": "{{challengeId}}"
 												}
 											]
 										}
@@ -5689,7 +6919,7 @@
 										},
 										{
 											"key": "date",
-											"value": "Tue, 12 Nov 2024 11:16:40 GMT"
+											"value": "Thu, 14 Nov 2024 14:58:10 GMT"
 										},
 										{
 											"key": "cache-control",
@@ -5709,7 +6939,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"it\": [\n        0\n    ]\n}"
+									"body": "{\n  \"it\": [\n    {\n      \"pi\": \"string\",\n      \"n\": \"string\",\n      \"st\": 0,\n      \"pos\": 0,\n      \"tid\": \"string\",\n      \"ap\": 0,\n      \"tp\": 0,\n      \"mv\": 0,\n      \"t1\": \"string\",\n      \"t2\": \"string\",\n      \"if\": true,\n      \"dis\": true,\n      \"mpst\": 0,\n      \"mdst\": 0\n    }\n  ]\n}"
 								}
 							]
 						},
@@ -5730,12 +6960,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/challenges/:challengeId/lineup/fill",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/challenges/:challengeId/lineup/fill",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -5842,12 +7069,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/challenges/:challengeId/lineup/clear",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/challenges/:challengeId/lineup/clear",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -5864,7 +7088,79 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Reset",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/challenges/:challengeId/lineup/clear",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"challenges",
+												":challengeId",
+												"lineup",
+												"clear"
+											],
+											"variable": [
+												{
+													"key": "challengeId",
+													"value": "{{challengeId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Thu, 14 Nov 2024 14:54:20 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
 						}
 					]
 				},
@@ -5872,7 +7168,7 @@
 					"name": "Managers",
 					"item": [
 						{
-							"name": "Manager Ranking",
+							"name": "Detail",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -5888,12 +7184,125 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/challenges/:challengeId/table",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/challenges/:challengeId/table/:userId",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"challenges",
+										":challengeId",
+										"table",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "challengeId",
+											"value": "{{challengeId}}"
+										},
+										{
+											"key": "userId",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Manager Detail",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://api.kickbase.com/v4/challenges/:challengeId/table/:userId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"kickbase",
+												"com"
+											],
+											"path": [
+												"v4",
+												"challenges",
+												":challengeId",
+												"table",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "challengeId"
+												},
+												{
+													"key": "userId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 12 Nov 2024 11:17:34 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"lp\": [\n        0\n    ],\n    \"il\": false,\n    \"t\": 0,\n    \"li\": \"string\",\n    \"u\": {\n        \"i\": \"string\",\n        \"n\": \"string\"\n    },\n    \"ifa\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "Ranking",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/challenges/:challengeId/table",
+									"host": [
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -5982,7 +7391,7 @@
 							]
 						},
 						{
-							"name": "Manager Detail",
+							"name": "Top 10 Managers",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -5998,131 +7407,9 @@
 									}
 								],
 								"url": {
-									"raw": "https://api.kickbase.com/v4/challenges/:challengeId/table/:userId",
-									"protocol": "https",
+									"raw": "{{api_url}}/v4/challenges/:challengeId/top10",
 									"host": [
-										"api",
-										"kickbase",
-										"com"
-									],
-									"path": [
-										"v4",
-										"challenges",
-										":challengeId",
-										"table",
-										":userId"
-									],
-									"variable": [
-										{
-											"key": "challengeId",
-											"value": "{{challengeId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Manager Detail",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "https://api.kickbase.com/v4/challenges/:challengeId/table/:userId",
-											"protocol": "https",
-											"host": [
-												"api",
-												"kickbase",
-												"com"
-											],
-											"path": [
-												"v4",
-												"challenges",
-												":challengeId",
-												"table",
-												":userId"
-											],
-											"variable": [
-												{
-													"key": "challengeId"
-												},
-												{
-													"key": "userId"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "content-type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "date",
-											"value": "Tue, 12 Nov 2024 11:17:34 GMT"
-										},
-										{
-											"key": "cache-control",
-											"value": "no-store, no-cache"
-										},
-										{
-											"key": "content-encoding",
-											"value": "br"
-										},
-										{
-											"key": "transfer-encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "vary",
-											"value": "Accept-Encoding"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"lp\": [\n        0\n    ],\n    \"il\": false,\n    \"t\": 0,\n    \"li\": \"string\",\n    \"u\": {\n        \"i\": \"string\",\n        \"n\": \"string\"\n    },\n    \"ifa\": false\n}"
-								}
-							]
-						},
-						{
-							"name": "Manager Leaderboard",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://api.kickbase.com/v4/challenges/:challengeId/top10",
-									"protocol": "https",
-									"host": [
-										"api",
-										"kickbase",
-										"com"
+										"{{api_url}}"
 									],
 									"path": [
 										"v4",
@@ -6229,12 +7516,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/challenges/overview",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/challenges/overview",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -6326,12 +7610,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/challenges/selection",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/challenges/selection",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -6423,12 +7704,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/challenges/:challengeId/profile",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/challenges/:challengeId/profile",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -6533,12 +7811,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/challenges/archive",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/challenges/archive",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -6630,12 +7905,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/challenges/recommended",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/challenges/recommended",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -6727,12 +7999,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/challenges/:challengeId/ranking?dayNumber=dayNumber",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/challenges/:challengeId/ranking?dayNumber={{dayNumber}}",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -6743,7 +8012,7 @@
 							"query": [
 								{
 									"key": "dayNumber",
-									"value": "dayNumber"
+									"value": "{{dayNumber}}"
 								}
 							],
 							"variable": [
@@ -6754,7 +8023,81 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Ranking",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/challenges/:challengeId/ranking?dayNumber={{dayNumber}}",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"challenges",
+										":challengeId",
+										"ranking"
+									],
+									"query": [
+										{
+											"key": "dayNumber",
+											"value": "{{dayNumber}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "challengeId",
+											"value": "{{challengeId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 14 Nov 2024 15:01:24 GMT"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store, no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "br"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"tom\": [\n    {\n      \"ui\": \"string\",\n      \"unm\": \"string\",\n      \"cur\": true,\n      \"pl\": 0,\n      \"p\": 0,\n      \"ifa\": true\n    }\n  ],\n  \"fm\": [\n    {}\n  ],\n  \"fp\": [\n    {\n      \"usp\": 0,\n      \"p\": 0,\n      \"i\": \"string\",\n      \"n\": \"string\",\n      \"tid\": \"string\"\n    }\n  ],\n  \"t\": 0,\n  \"li\": \"string\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Performance",
@@ -6773,12 +8116,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/challenges/:challengeId/performance?dayNumber=dayNumber",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/challenges/:challengeId/performance?dayNumber={{dayNumber}}",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -6789,7 +8129,7 @@
 							"query": [
 								{
 									"key": "dayNumber",
-									"value": "dayNumber"
+									"value": "{{dayNumber}}"
 								}
 							],
 							"variable": [
@@ -6800,7 +8140,81 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Performance",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/v4/challenges/:challengeId/performance?dayNumber={{dayNumber}}",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"v4",
+										"challenges",
+										":challengeId",
+										"performance"
+									],
+									"query": [
+										{
+											"key": "dayNumber",
+											"value": "{{dayNumber}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "challengeId",
+											"value": "{{challengeId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 14 Nov 2024 15:02:06 GMT"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store, no-cache"
+								},
+								{
+									"key": "content-encoding",
+									"value": "br"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"lp\": [],\n    \"t\": 3,\n    \"li\": \"string\",\n    \"u\": {\n        \"i\": \"string\",\n        \"n\": \"string\"\n    },\n    \"pl\": 0\n}"
+						}
+					]
 				}
 			]
 		},
@@ -6808,7 +8222,7 @@
 			"name": "Chat",
 			"item": [
 				{
-					"name": "Chat League Selection",
+					"name": "League Selection",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -6824,12 +8238,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/chat/leagueselection",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/chat/leagueselection",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -6905,7 +8316,7 @@
 					]
 				},
 				{
-					"name": "Chat Refresh Token",
+					"name": "Refresh Token",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -6921,12 +8332,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/chat/refreshtoken",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/chat/refreshtoken",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -7007,7 +8415,7 @@
 			"name": "Files",
 			"item": [
 				{
-					"name": "Files Team Image",
+					"name": "Team Images",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -7015,12 +8423,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://cdn.kickbase.com/files/teams/:teamId/:size",
-							"protocol": "https",
+							"raw": "{{cdn_url}}/files/teams/:teamId/:size",
 							"host": [
-								"cdn",
-								"kickbase",
-								"com"
+								"{{cdn_url}}"
 							],
 							"path": [
 								"files",
@@ -7035,7 +8440,8 @@
 								},
 								{
 									"key": "size",
-									"value": "{{size}}"
+									"value": "{{size}}",
+									"description": "0 or 11"
 								}
 							]
 						}
@@ -7043,7 +8449,7 @@
 					"response": []
 				},
 				{
-					"name": "Files Player Image",
+					"name": "Player Images",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -7051,12 +8457,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://cdn.kickbase.com/files/players/:playerId/:size",
-							"protocol": "https",
+							"raw": "{{cdn_url}}/files/players/:playerId/:size",
 							"host": [
-								"cdn",
-								"kickbase",
-								"com"
+								"{{cdn_url}}"
 							],
 							"path": [
 								"files",
@@ -7071,7 +8474,8 @@
 								},
 								{
 									"key": "size",
-									"value": "{{size}}"
+									"value": "{{size}}",
+									"description": "0 or 1"
 								}
 							]
 						}
@@ -7079,7 +8483,7 @@
 					"response": []
 				},
 				{
-					"name": "Files User Image",
+					"name": "User Images",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -7087,14 +8491,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://cdn.kickbase.com/files/users/:userId/:size",
-							"protocol": "https",
+							"raw": "{{cdn_url}}/files/users/:userId/:size",
 							"host": [
-								"cdn",
-								"kickbase",
-								"com"
+								"{{cdn_url}}"
 							],
 							"path": [
+								"",
 								"files",
 								"users",
 								":userId",
@@ -7107,7 +8509,8 @@
 								},
 								{
 									"key": "size",
-									"value": "{{size}}"
+									"value": "{{size}}",
+									"description": "0 or 1"
 								}
 							]
 						}
@@ -7115,7 +8518,7 @@
 					"response": []
 				},
 				{
-					"name": "Files League Image",
+					"name": "League Image",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -7123,27 +8526,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://cdn.kickbase.com/files/leagues/:leagueId/:size",
-							"protocol": "https",
+							"raw": "{{cdn_url}}/v4/files/leagues/:leagueId",
 							"host": [
-								"cdn",
-								"kickbase",
-								"com"
+								"{{cdn_url}}"
 							],
 							"path": [
+								"v4",
 								"files",
 								"leagues",
-								":leagueId",
-								":size"
+								":leagueId"
 							],
 							"variable": [
 								{
 									"key": "leagueId",
 									"value": "{{leagueId}}"
-								},
-								{
-									"key": "size",
-									"value": "{{size}}"
 								}
 							]
 						}
@@ -7181,7 +8577,7 @@
 			"name": "Live",
 			"item": [
 				{
-					"name": "Live Event Types",
+					"name": "Event Types",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -7197,12 +8593,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.kickbase.com/v4/live/eventtypes",
-							"protocol": "https",
+							"raw": "{{api_url}}/v4/live/eventtypes",
 							"host": [
-								"api",
-								"kickbase",
-								"com"
+								"{{api_url}}"
 							],
 							"path": [
 								"v4",
@@ -7296,12 +8689,9 @@
 					}
 				],
 				"url": {
-					"raw": "https://api.kickbase.com/v4/config",
-					"protocol": "https",
+					"raw": "{{api_url}}/v4/config",
 					"host": [
-						"api",
-						"kickbase",
-						"com"
+						"{{api_url}}"
 					],
 					"path": [
 						"v4",
@@ -7391,17 +8781,108 @@
 					}
 				],
 				"url": {
-					"raw": "https://api.kickbase.com/v4/bonus/collect",
-					"protocol": "https",
+					"raw": "{{api_url}}/v4/bonus/collect",
 					"host": [
-						"api",
-						"kickbase",
-						"com"
+						"{{api_url}}"
 					],
 					"path": [
 						"v4",
 						"bonus",
 						"collect"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Bonus Collection",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.kickbase.com/v4/bonus/collect",
+							"protocol": "https",
+							"host": [
+								"api",
+								"kickbase",
+								"com"
+							],
+							"path": [
+								"v4",
+								"bonus",
+								"collect"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Tue, 12 Nov 2024 11:26:26 GMT"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-store, no-cache"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						},
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"it\": [],\n    \"url\": \"https://go.kickbase.com/tipicodailybonus\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Base Overview",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api_url}}/v4/base/overview",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"v4",
+						"base",
+						"overview"
 					]
 				}
 			},
@@ -7502,83 +8983,6 @@
 					""
 				]
 			}
-		}
-	],
-	"variable": [
-		{
-			"key": "token",
-			"value": "token",
-			"type": "string"
-		},
-		{
-			"key": "leagueId",
-			"value": "leagueId",
-			"type": "string"
-		},
-		{
-			"key": "competitionId",
-			"value": "1",
-			"type": "string"
-		},
-		{
-			"key": "playerId",
-			"value": "playerId",
-			"type": "string"
-		},
-		{
-			"key": "teamId",
-			"value": "3",
-			"type": "string"
-		},
-		{
-			"key": "dayNumber",
-			"value": "1",
-			"type": "string"
-		},
-		{
-			"key": "userId",
-			"value": "userId",
-			"type": "string"
-		},
-		{
-			"key": "activityId",
-			"value": "activityId",
-			"type": "string"
-		},
-		{
-			"key": "challengeId",
-			"value": "challengeId",
-			"type": "string"
-		},
-		{
-			"key": "size",
-			"value": "0",
-			"type": "string"
-		},
-		{
-			"key": "email",
-			"value": "email",
-			"type": "string"
-		},
-		{
-			"key": "password",
-			"value": "password",
-			"type": "string"
-		},
-		{
-			"key": "matchId",
-			"value": "matchId",
-			"type": "string"
-		},
-		{
-			"key": "offerId",
-			"value": "offerId",
-			"type": "string"
-		},
-		{
-			"key": "timeframe",
-			"value": "365",
-			"type": "string"
 		}
 	]
 }
