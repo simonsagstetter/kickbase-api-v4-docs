@@ -4,7 +4,8 @@
 		"name": "Kickbase v4",
 		"description": "This API was published as part of [kickbase-api-doc](https://github.com/kevinskyba/kickbase-api-doc) on GitHub. It is licensed under the [MIT License](https://github.com/kevinskyba/kickbase-api-doc/blob/master/LICENSE). The purpose of this documentation is for scientific reasons only!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30905634"
+		"_exporter_id": "30905634",
+		"_collection_link": "https://kickbase-api-v4.postman.co/workspace/Kickbase-API-v4-Workspace~5da4d6fd-6795-4ed1-9939-991ae5036b50/collection/30905634-492dcfa9-6962-4641-bf68-a861a00b01f3?action=share&source=collection_link&creator=30905634"
 	},
 	"item": [
 		{
@@ -226,7 +227,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"u\": {\n        \"i\": \"string\",\n        \"em\": \"string\",\n        \"unm\": \"string\"\n    }\n}"
+							"body": "{\n    \"u\": {\n        \"i\": \"userId\",\n        \"em\": \"email\",\n        \"unm\": \"username\"\n    }\n}"
 						}
 					]
 				}
@@ -272,7 +273,8 @@
 											"value": "{{leagueId}}"
 										}
 									]
-								}
+								},
+								"description": "Returns all available achievements for the current authenticated user and league."
 							},
 							"response": [
 								{
@@ -344,7 +346,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"it\": [\n        {\n            \"t\": 5,\n            \"n\": \"Match day winner\",\n            \"ac\": 10,\n            \"ise\": true\n        },\n        {\n            \"t\": 1,\n            \"n\": \"Match day winner bronze\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 2,\n            \"n\": \"Match day winner silver\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 3,\n            \"n\": \"Match day winner gold\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 4,\n            \"n\": \"The Special One\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 100,\n            \"n\": \"Match day points bronze\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 101,\n            \"n\": \"Match day points silver\",\n            \"ac\": 2,\n            \"ise\": true\n        },\n        {\n            \"t\": 102,\n            \"n\": \"Match day points gold\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 103,\n            \"n\": \"Match of the century\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 200,\n            \"n\": \"Season points bronze\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 201,\n            \"n\": \"Season points silver\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 202,\n            \"n\": \"Season points gold\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 203,\n            \"n\": \"Season points platinum\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 204,\n            \"n\": \"World cup winner\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 300,\n            \"n\": \"Top scorer\",\n            \"ac\": 5,\n            \"ise\": true\n        },\n        {\n            \"t\": 301,\n            \"n\": \"Match winner\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 302,\n            \"n\": \"World class\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 303,\n            \"n\": \"Football god\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 400,\n            \"n\": \"Team value bronze\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 401,\n            \"n\": \"Team value silver\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 402,\n            \"n\": \"Team value gold\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 403,\n            \"n\": \"Team value platinum\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 404,\n            \"n\": \"The Galactics\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 500,\n            \"n\": \"First deal\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 501,\n            \"n\": \"Transfer King bronze\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 502,\n            \"n\": \"Transfer King silver\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 503,\n            \"n\": \"Transfer King gold\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 504,\n            \"n\": \"F. Magath\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 600,\n            \"n\": \"Kreisliga\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 601,\n            \"n\": \"Regionalliga\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 602,\n            \"n\": \"2. Liga\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 603,\n            \"n\": \"1. Liga\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 700,\n            \"n\": \"The right touch\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 701,\n            \"n\": \"Bronze hand\",\n            \"ac\": 2,\n            \"ise\": true\n        },\n        {\n            \"t\": 702,\n            \"n\": \"Silver hand\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 703,\n            \"n\": \"Golden hand\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 704,\n            \"n\": \"Royal transfer\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 900,\n            \"n\": \"Manager license\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 2001,\n            \"n\": \"Champion\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 2002,\n            \"n\": \"Runner-up\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 3000,\n            \"n\": \"Long bench\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 4000,\n            \"n\": \"Panini\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 4001,\n            \"n\": \"Choreo\",\n            \"ac\": 1,\n            \"ise\": true\n        },\n        {\n            \"t\": 5001,\n            \"n\": \"MVP\",\n            \"ac\": 0,\n            \"ise\": false\n        },\n        {\n            \"t\": 7502,\n            \"n\": \"Goal machine\",\n            \"ac\": 10,\n            \"ise\": true\n        }\n    ]\n}"
+									"body": "{\n    \"it\": [\n        {\n            \"t\": 0,\n            \"n\": \"name\",\n            \"ac\": 0,\n            \"ise\": false\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -464,7 +466,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"t\": 5,\n    \"n\": \"Match day winner\",\n    \"d\": \"Win the match day\",\n    \"ac\": 10,\n    \"ise\": true,\n    \"er\": 1000000,\n    \"dt\": \"datetimestring\",\n    \"isrp\": true\n}"
+									"body": "{\n    \"t\": 5,\n    \"n\": \"name\",\n    \"d\": \"description\",\n    \"ac\": 10,\n    \"ise\": true,\n    \"er\": 1000000,\n    \"dt\": \"datetimestring\",\n    \"isrp\": true\n}"
 								}
 							]
 						},
@@ -584,7 +586,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"n\": \"Defensive Dynamo\",\n    \"d\": \"Most points scored with defenders\",\n    \"us\": [\n        {\n            \"u\": {\n                \"i\": \"string\",\n                \"n\": \"string\"\n            },\n            \"pl\": 0,\n            \"v\": \"string\"\n        }\n    ]\n}"
+									"body": "{\n    \"n\": \"name\",\n    \"d\": \"description\",\n    \"us\": [\n        {\n            \"u\": {\n                \"i\": \"userId\",\n                \"n\": \"userName\"\n            },\n            \"pl\": 0,\n            \"v\": \"value\"\n        }\n    ]\n}"
 								}
 							]
 						}
@@ -610,7 +612,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_url}}/v4/leagues/:leagueId/activitiesFeed?start=start&max=max",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/activitiesFeed?start={{start}}&max={{max}}",
 									"host": [
 										"{{api_url}}"
 									],
@@ -623,11 +625,11 @@
 									"query": [
 										{
 											"key": "start",
-											"value": "start"
+											"value": "{{start}}"
 										},
 										{
 											"key": "max",
-											"value": "max"
+											"value": "{{max}}"
 										}
 									],
 									"variable": [
@@ -844,7 +846,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_url}}/v4/leagues/:leagueId/activitiesFeed/:activityId/comments?start=start&max=max",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/activitiesFeed/:activityId/comments?start={{start}}&max={{max}}",
 									"host": [
 										"{{api_url}}"
 									],
@@ -859,11 +861,11 @@
 									"query": [
 										{
 											"key": "start",
-											"value": "start"
+											"value": "{{start}}"
 										},
 										{
 											"key": "max",
-											"value": "max"
+											"value": "{{max}}"
 										}
 									],
 									"variable": [
@@ -1705,11 +1707,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_url}}v4/leagues/:leagueId/market/:playerId/offers/:offerId/accept",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/market/:playerId/offers/:offerId/accept",
 									"host": [
-										"{{api_url}}v4"
+										"{{api_url}}"
 									],
 									"path": [
+										"v4",
 										"leagues",
 										":leagueId",
 										"market",
@@ -1802,11 +1805,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_url}}v4/leagues/:leagueId/market/:playerId/offers/:offerId",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/market/:playerId/offers/:offerId",
 									"host": [
-										"{{api_url}}v4"
+										"{{api_url}}"
 									],
 									"path": [
+										"v4",
 										"leagues",
 										":leagueId",
 										"market",
@@ -3087,7 +3091,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_url}}/v4/leagues/:leagueId/managers/:userId/transfer?start=:start",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/managers/:userId/transfer?start={{start}}",
 									"host": [
 										"{{api_url}}"
 									],
@@ -3102,7 +3106,7 @@
 									"query": [
 										{
 											"key": "start",
-											"value": ":start"
+											"value": "{{start}}"
 										}
 									],
 									"variable": [
@@ -3704,7 +3708,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_url}}/v4/leagues/:leagueId/players/:playerId/transferHistory?start=0",
+									"raw": "{{api_url}}/v4/leagues/:leagueId/players/:playerId/transferHistory?start={{start}}",
 									"host": [
 										"{{api_url}}"
 									],
@@ -3719,7 +3723,7 @@
 									"query": [
 										{
 											"key": "start",
-											"value": "0"
+											"value": "{{start}}"
 										}
 									],
 									"variable": [
@@ -4091,7 +4095,82 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Profile",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{api_url}}/v4/leagues/:leagueId/teams/:teamId/teamprofile/",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"v4",
+												"leagues",
+												":leagueId",
+												"teams",
+												":teamId",
+												"teamprofile",
+												""
+											],
+											"variable": [
+												{
+													"key": "leagueId",
+													"value": "{{leagueId}}"
+												},
+												{
+													"key": "teamId",
+													"value": "{{teamId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 20 Nov 2024 21:43:34 GMT"
+										},
+										{
+											"key": "cache-control",
+											"value": "no-store, no-cache"
+										},
+										{
+											"key": "content-encoding",
+											"value": "br"
+										},
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"tid\": \"string\",\n  \"tn\": \"string\",\n  \"pl\": 0,\n  \"tv\": 0,\n  \"tw\": 0,\n  \"td\": 0,\n  \"tl\": 0,\n  \"it\": [\n    {\n      \"i\": \"string\",\n      \"n\": \"string\",\n      \"lst\": 0,\n      \"st\": 0,\n      \"pos\": 0,\n      \"mv\": 0,\n      \"mvt\": 0,\n      \"ap\": 0,\n      \"iotm\": true,\n      \"ofc\": 0,\n      \"tid\": \"string\",\n      \"sdmvt\": 0,\n      \"mvgl\": 0\n    }\n  ],\n  \"npt\": 0,\n  \"avpcl\": true\n}"
+								}
+							]
 						}
 					]
 				},
@@ -4206,11 +4285,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{api_url}}v4/leagues/:leagueId/overview?includeManagersAndBattles={{includeManagersAndBattles}}",
+							"raw": "{{api_url}}/v4/leagues/:leagueId/overview?includeManagersAndBattles={{includeManagersAndBattles}}",
 							"host": [
-								"{{api_url}}v4"
+								"{{api_url}}"
 							],
 							"path": [
+								"v4",
 								"leagues",
 								":leagueId",
 								"overview"
@@ -4946,24 +5026,20 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_url}}v4/competitions/:competitionId/players/:playerId",
+									"raw": "{{api_url}}/v4/competitions/:competitionId/overview",
 									"host": [
-										"{{api_url}}v4"
+										"{{api_url}}"
 									],
 									"path": [
+										"v4",
 										"competitions",
 										":competitionId",
-										"players",
-										":playerId"
+										"overview"
 									],
 									"variable": [
 										{
 											"key": "competitionId",
 											"value": "{{competitionId}}"
-										},
-										{
-											"key": "playerId",
-											"value": "{{playerId}}"
 										}
 									]
 								}
@@ -5061,11 +5137,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{api_url}}v4/competitions/:competitionId/players/:playerId/performance",
+									"raw": "{{api_url}}/v4/competitions/:competitionId/players/:playerId/performance",
 									"host": [
-										"{{api_url}}v4"
+										"{{api_url}}"
 									],
 									"path": [
+										"v4",
 										"competitions",
 										":competitionId",
 										"players",
@@ -8496,7 +8573,6 @@
 								"{{cdn_url}}"
 							],
 							"path": [
-								"",
 								"files",
 								"users",
 								":userId",

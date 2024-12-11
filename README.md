@@ -1,6 +1,18 @@
-### Kickbase API v4 Documentation
+## 📣 This repository is not actively maintained anymore!
 
-This is **preliminary, quick and dirty documentation** of the kickbase api **v4**. This work is unofficial and not related to kickbase in any way. All of this was done for scientific reasons only and you should not use it for anything else but for your personal learning!
+> The Kickbase API v4 will be further maintained in **[kevinskyba's](http://kevinskyba.github.io) repository [kickbase-api-doc](http://kevinskyba.github.io/kickbase-api-doc)**.
+>
+> We decided this so we can reach a larger community with newest endpoints we have found and documented. This will help everyone bring their apps back up and running.
+>
+> Pull requests and issues are not being actively reviewed.
+>
+> Thanks!
+
+<br>
+
+## Kickbase API v4 Documentation
+
+This work is unofficial and not related to kickbase in any way. All of this was done for scientific reasons only and you should not use it for anything else but for your personal learning!
 
 [API v4 Documentation Web Version](https://simonsagstetter.github.io/kickbase-api-v4-docs/) made with [Apidog](https://apidog.com/blog/export-postman-documentation-to-html-or-markdown/) and [Swagger Hub](https://app.swaggerhub.com/)
 
