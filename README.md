@@ -1,6 +1,6 @@
 ## 📣 This repository is not actively maintained anymore!
 
-> The Kickbase API v4 will be further maintained in **[kevinskyba's](http://kevinskyba.github.io) repository [kickbase-api-doc](http://kevinskyba.github.io/kickbase-api-doc)**.
+> The Kickbase API v4 will be further maintained in **[kevinskyba's](https://github.com/kevinskyba) repository [kickbase-api-doc](https://github.com/kevinskyba/kickbase-api-doc)**.
 >
 > We decided this so we can reach a larger community with newest endpoints we have found and documented. This will help everyone bring their apps back up and running.
 >
